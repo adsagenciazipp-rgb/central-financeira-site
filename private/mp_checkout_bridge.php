@@ -37,7 +37,7 @@ function site_mp_sandbox_start(array $settings,array $payload): array {
         if(is_string($body)&&strlen($body)<=4096) {
             $remote=json_decode($body,true);
             if(is_array($remote)&&is_string($remote['code']??null)
-               &&preg_match('/^MP_(PLAN|SUBSCRIPTION)_(HTTP_[1-5][0-9]{2}|FAILED)(_REASON_[a-z0-9_-]{2,40})?$/D',$remote['code'])) {
+               &&preg_match('/^(?:MP_(PLAN|SUBSCRIPTION)_(HTTP_[1-5][0-9]{2}|FAILED)(_REASON_[a-z0-9_-]{2,40})?|MP_TEST_SELLER_(?:TOKEN_TYPE|ID_REQUIRED|ID_MISMATCH|NOT_TEST_USER|COUNTRY_MISMATCH|TOKEN_REJECTED|IDENTITY_UNAVAILABLE))$/D',$remote['code'])) {
                 $code=$remote['code'];
             }
         }
