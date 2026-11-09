@@ -41,6 +41,13 @@ function checkout_test_normalize(array $post): array {
         'amount_cents' => $plans[$key][$method],
     ];
 }
+/** Identificador de login TESTUSER não é e-mail; aceitar somente e-mails de teste. */
+function checkout_mp_test_email_valid(string $email): bool {
+    $email=strtolower(trim($email));
+    return filter_var($email, FILTER_VALIDATE_EMAIL)!==false
+        && preg_match('/^[a-z0-9._%+-]+@testuser\.com$/D', $email)===1;
+}
+
 function checkout_test_money(int $cents): string {
     return 'R$ '.number_format($cents / 100, 2, ',', '.');
 }
