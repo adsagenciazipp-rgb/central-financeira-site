@@ -5,6 +5,10 @@ declare(strict_types=1);
  * Uma falha de conexão não autoriza valores estáticos nem uma cobrança.
  */
 function site_catalog_fetch(array $settings): array {
+    $fail=static function(string $code): array {
+        error_log('Central catalog bridge diagnostic: '.$code);
+        return ['ok'=>false,'plans'=>[],'diagnostic'=>$code];
+    };
     $url=(string)($settings['catalog_url']??'');
     $secret=(string)($settings['catalog_secret']??'');
     $parts=parse_url($url);
@@ -14,11 +18,11 @@ function site_catalog_fetch(array $settings): array {
         ||isset($parts['port'])||isset($parts['user'])||isset($parts['pass'])
         ||isset($parts['query'])||isset($parts['fragment'])
         ||strlen($secret)<32) {
-        return ['ok'=>false,'plans'=>[]];
+        return $fail(strlen($secret)<32 ? 'CONFIG_SECRET_MISSING' : 'CONFIG_URL_INVALID');
     }
-    if(!function_exists('curl_init')) return ['ok'=>false,'plans'=>[]];
+    if(!function_exists('curl_init')) return $fail('CURL_UNAVAILABLE');
     $ch=curl_init($url);
-    if($ch===false)return ['ok'=>false,'plans'=>[]];
+    if($ch===false)return $fail('CURL_INIT_FAILED');
     try {
         curl_setopt_array($ch,[
             CURLOPT_RETURNTRANSFER=>true,
@@ -31,10 +35,13 @@ function site_catalog_fetch(array $settings): array {
         ]);
         $body=curl_exec($ch);
         $status=(int)curl_getinfo($ch,CURLINFO_HTTP_CODE);
+        $curlError=$body===false?(int)curl_errno($ch):0;
     } finally {curl_close($ch);}
-    if($status!==200 || !is_string($body)||strlen($body)>50000)return ['ok'=>false,'plans'=>[]];
-    try{$data=json_decode($body,true,16,JSON_THROW_ON_ERROR);}catch(JsonException $e){return ['ok'=>false,'plans'=>[]];}
-    if(!is_array($data)||($data['mode']??'')!=='sandbox_catalog_only'||!is_array($data['plans']??null))return ['ok'=>false,'plans'=>[]];
+    if($curlError!==0)return $fail('CURL_ERROR_'.$curlError);
+    if($status!==200)return $fail('HTTP_'.$status);
+    if(!is_string($body)||strlen($body)>50000)return $fail('RESPONSE_INVALID_SIZE');
+    try{$data=json_decode($body,true,16,JSON_THROW_ON_ERROR);}catch(JsonException $e){return $fail('INVALID_JSON');}
+    if(!is_array($data)||($data['mode']??'')!=='sandbox_catalog_only'||!is_array($data['plans']??null))return $fail('INVALID_RESPONSE_SCHEMA');
     $plans=[];
     foreach(array_slice($data['plans'],0,20) as $p){
         if(!is_array($p)||!is_int($p['id']??null)||$p['id']<1
@@ -44,5 +51,5 @@ function site_catalog_fetch(array $settings): array {
             ||!is_bool($p['public']??null))continue;
         $plans[]=$p;
     }
-    return ['ok'=>true,'plans'=>$plans];
+    return ['ok'=>true,'plans'=>$plans,'diagnostic'=>'OK'];
 }
