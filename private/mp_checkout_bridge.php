@@ -6,7 +6,7 @@ require_once __DIR__.'/catalog_bridge.php';
 function site_mp_sandbox_start(array $settings,array $payload): array {
     if(($settings['mp_sandbox_checkout_enabled']??false)!==true)
         throw new RuntimeException('O teste de cartão ainda não está habilitado.');
-    $secret=(string)($settings['catalog_secret']??'');
+    $secret=(string)($settings['mp_sandbox_checkout_secret']??'');
     $url=(string)($settings['mp_sandbox_checkout_url']??'');
     if($url!=='https://central.naiaracora.com.br/commerce_mp_sandbox_checkout.php'||strlen($secret)<32)
         throw new RuntimeException('Comunicação com a Central não está configurada.');
@@ -25,7 +25,7 @@ function site_mp_sandbox_start(array $settings,array $payload): array {
             CURLOPT_SSL_VERIFYHOST=>2,
             CURLOPT_SSL_VERIFYPEER=>true,
             CURLOPT_HTTPHEADER=>['Content-Type: application/json','Accept: application/json',
-                'X-CF-Catalog-Secret: '.$secret],
+                'X-CF-Checkout-Secret: '.$secret],
         ]);
         $body=curl_exec($ch);
         $status=(int)curl_getinfo($ch,CURLINFO_HTTP_CODE);
