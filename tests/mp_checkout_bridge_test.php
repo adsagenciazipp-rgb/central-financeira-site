@@ -19,4 +19,5 @@ if(!is_string($bridgeSource)||!str_contains($bridgeSource,'mp_sandbox_checkout_s
 if(!is_string($checkoutSource)||!str_contains($checkoutSource,'TESTUSER...')||!str_contains($checkoutSource,'payer_email'))throw new RuntimeException('Orientação sobre login e email ausente');
 if(!str_contains($checkoutSource,'Iniciar assinatura pendente no Mercado Pago (teste)'))throw new RuntimeException('Checkout deve informar status pendente');
 if(!str_contains($checkoutSource,'Apenas simular (sem Mercado Pago)'))throw new RuntimeException('Simulação não distinguida da autorização');
+if(str_contains($checkoutSource,'?>"" type="submit" name="checkout_action" value="simulate"'))throw new RuntimeException('Aspas extras no botão de simulação');
 echo "OK: opt-in, endpoint restrito e redirecionamento Mercado Pago validado.\n";

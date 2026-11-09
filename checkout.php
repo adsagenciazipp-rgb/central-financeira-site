@@ -104,7 +104,7 @@ if(($_SERVER['REQUEST_METHOD']??'GET')==='POST'){
 <p class="fineprint">Para este teste, escolhemos a modalidade cartão recorrente na Central, mas a autorização do meio de pagamento acontece no Mercado Pago. A assinatura começa pendente e nenhum acesso ao Portal é liberado pelo retorno. Faça login com a conta compradora de teste.</p>
 <?php endif;?>
 <?php if($mpKeyPending):?><p class="fineprint"><strong>Autorização de teste indisponível:</strong> configure a chave privada de checkout separada da chave de consulta de planos. Nenhuma credencial é exibida nesta página.</p><?php endif;?>
-<button class="btn <?=$canMp?'btn-secondary':''?>"" type="submit" name="checkout_action" value="simulate"><?=$canMp?'Apenas simular (sem Mercado Pago)':'Simular continuidade'?> <span aria-hidden="true">→</span></button>
+<button class="btn <?=$canMp?'btn-secondary':''?>" type="submit" name="checkout_action" value="simulate"><?=$canMp?'Apenas simular (sem Mercado Pago)':'Simular continuidade'?> <span aria-hidden="true">→</span></button>
 </form>
 <p class="fineprint">Na simulação, nenhum dado é armazenado. Ao iniciar a assinatura pendente Sandbox, nome e e-mail de teste são enviados à Central e o e-mail de teste ao Mercado Pago. O preço definitivo será consultado na Central quando a integração estiver homologada.</p>
 </section>
