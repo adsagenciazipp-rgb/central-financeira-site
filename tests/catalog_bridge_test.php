@@ -9,5 +9,8 @@ $cases=[
  ['catalog_url'=>'https://central.naiaracora.com.br/commerce_site_catalog.php','catalog_secret'=>'fraca'],
  [],
 ];
-foreach($cases as $case){$result=site_catalog_fetch($case);ensure_catalog($result['ok']===false && $result['plans']===[], 'Conexão inválida deve falhar fechada');}
+foreach($cases as $case){$result=site_catalog_fetch($case);ensure_catalog($result['ok']===false && $result['plans']===[], 'Conexão inválida deve falhar fechada'); ensure_catalog(is_string($result['diagnostic']??null), 'A falha deve retornar diagnóstico sem dados sensíveis');}
 echo "OK: URL HTTPS restrita, credenciais não compartilhadas e falha fechada.\n";
+
+$missing=site_catalog_fetch(['catalog_url'=>'https://central.naiaracora.com.br/commerce_site_catalog.php','catalog_secret'=>'']);
+ensure_catalog($missing['diagnostic']==='CONFIG_SECRET_MISSING','Segredo ausente deve ser identificado sem revelá-lo');
