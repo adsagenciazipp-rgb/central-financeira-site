@@ -18,6 +18,14 @@ $checkoutSource=file_get_contents(dirname(__DIR__).'/checkout.php');
 if(!is_string($bridgeSource)||!str_contains($bridgeSource,'mp_sandbox_checkout_secret')||!str_contains($bridgeSource,'X-CF-Checkout-Secret')||!str_contains($bridgeSource,'MP_(PLAN|SUBSCRIPTION)')||!str_contains($bridgeSource,'Diagnóstico:'))throw new RuntimeException('Código de diagnóstico MP seguro ausente');
 if(!is_string($checkoutSource)||!str_contains($checkoutSource,'TESTUSER...')||!str_contains($checkoutSource,'payer_email'))throw new RuntimeException('Orientação sobre login e email ausente');
 if(!str_contains($bridgeSource,'_REASON_'))throw new RuntimeException('Bridge deve reconhecer código técnico de validação remoto');
+if(!str_contains($bridgeSource,'MP_SUBSCRIPTION_HTTP_400_REASON_payer_site_mismatch')
+    || !str_contains($bridgeSource,'conta COMPRADOR de teste criada para o Brasil'))
+    throw new RuntimeException('Checkout deve orientar comprador e vendedor no mesmo país');
+if(!str_contains($checkoutSource,'Não invente e-mails')
+    || str_contains($checkoutSource,'por exemplo, <code>testuser123456789@testuser.com</code>')
+    || !str_contains($checkoutSource,'conta Comprador de teste criada para o Brasil'))
+    throw new RuntimeException('Formulário não deve estimular e-mails inventados que não correspondem à conta compradora');
+
 if(str_contains($bridgeSource,'CENTRAL_RATE_LIMITED')
   || str_contains($bridgeSource,'três tentativas por hora')
   || !str_contains($bridgeSource,'CENTRAL_DB_ERROR'))
