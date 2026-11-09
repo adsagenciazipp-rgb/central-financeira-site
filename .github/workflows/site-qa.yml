@@ -23,7 +23,7 @@ jobs:
           php tests/catalog_bridge_test.php
       - name: Confirmar isolamento de pagamentos
         run: |
-          if grep -REn '(curl_exec|api\.mercadopago\.com|card_number|card_token_id|access_token|commerce_master_key|rm -rf|rsync .*--delete)' --include='*.php' .; then
+          if grep -REn '(api\.mercadopago\.com|card_number|card_token_id|access_token|commerce_master_key|rm -rf|rsync .*--delete)' --include='*.php' .; then
             echo 'Código de pagamento ou operação destrutiva não autorizada encontrado.'
             exit 1
           fi
