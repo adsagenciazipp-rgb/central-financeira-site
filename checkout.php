@@ -48,7 +48,7 @@ if(($_SERVER['REQUEST_METHOD']??'GET')==='POST'){
         if($action==='mp'){
             if(!$canMp)throw new RuntimeException('Cartão Sandbox não habilitado ou catálogo indisponível.');
             if($submitted['method']!=='card')throw new RuntimeException('Selecione cartão recorrente para testar a assinatura no Mercado Pago.');
-            if(!preg_match('/^[a-z0-9._%+-]+@testuser\\.com$/D',$submitted['email']))
+            if(!checkout_mp_test_email_valid($submitted['email']))
                 throw new RuntimeException('Para autorizar no Mercado Pago Sandbox, informe um e-mail de teste no domínio testuser.com.');
             $selectedId=(int)($_POST['mp_plan_id']??0);
             $selected=null;
