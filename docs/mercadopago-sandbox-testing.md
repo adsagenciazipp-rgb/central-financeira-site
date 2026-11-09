@@ -25,7 +25,8 @@ Documentação oficial:
 5. Se houver erro, anotar somente o código (exemplo `MP_PLAN_HTTP_400` ou `MP_SUBSCRIPTION_HTTP_400`). Não enviar credenciais, endereço de redirecionamento completo ou dados de pagamento.
 6. Se for aberta a autorização, conferir preço e ambiente; usar login da conta compradora de teste em janela anônima e apenas cartões de teste.
 7. Na Central, consultar "Tentativas Mercado Pago — Sandbox". `pending_authorization` registra que o **link foi gerado**, e NÃO que houve pagamento.
-8. Se houver retorno para `checkout_retorno.php`, não liberar acesso até implementar e homologar API de consulta, webhook, conferência de valor/assinatura e conciliação.
+8. Para uma tentativa com link gerado, na Central > Loja e cobranças > Tentativas Mercado Pago — Sandbox clique em **Consultar status (Sandbox)**. A Central consulta o objeto assinatura por API, confere ID, plano e, quando disponível, moeda e valor. Mesmo `authorized` **não comprova cobrança paga**.
+9. Se houver retorno para `checkout_retorno.php`, não liberar acesso até implementar e homologar consulta às faturas e pagamentos, webhook, conferência de valor/assinatura e conciliação.
 
 ## Diagnóstico seguro
 | Código | Interpretação |
