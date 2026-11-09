@@ -58,5 +58,6 @@ function site_catalog_fetch(array $settings): array {
             ||!is_bool($p['public']??null))continue;
         $plans[]=$p;
     }
-    return ['ok'=>true,'plans'=>$plans,'diagnostic'=>'OK'];
+    $diagnostic=count($plans)>0?'OK':(count($data['plans'])===0?'EMPTY_CATALOG':'INVALID_PLAN_DATA');
+    return ['ok'=>true,'plans'=>$plans,'diagnostic'=>$diagnostic];
 }

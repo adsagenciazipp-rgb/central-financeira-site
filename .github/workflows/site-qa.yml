@@ -21,6 +21,7 @@ jobs:
         run: |
           php tests/checkout_test.php
           php tests/catalog_bridge_test.php
+          php tests/catalog_empty_test.php
           php tests/mp_checkout_bridge_test.php
       - name: Confirmar isolamento de pagamentos
         run: |
