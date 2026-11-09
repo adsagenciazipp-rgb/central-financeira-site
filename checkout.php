@@ -51,7 +51,7 @@ if(($_SERVER['REQUEST_METHOD']??'GET')==='POST'){
             if(!$canMp)throw new RuntimeException('Cartão Sandbox não habilitado ou catálogo indisponível.');
             if($submitted['method']!=='card')throw new RuntimeException('Selecione cartão recorrente para testar a assinatura no Mercado Pago.');
             if(!checkout_mp_test_email_valid($submitted['email']))
-                throw new RuntimeException('Formato de e-mail de teste não aceito. Use um endereço como testuser123456789@testuser.com (sem espaços) e confira o diagnóstico EMAIL-V2 em checkout.php?diagnostico=1.');
+                throw new RuntimeException('Formato de e-mail de teste não aceito. Informe o e-mail da sua conta COMPRADOR de teste brasileira no domínio testuser.com (sem espaços). Não utilize endereços inventados; o validador local não comprova que a conta pertence ao Brasil.');
             $selectedId=(int)($_POST['mp_plan_id']??0);
             $selected=null;
             foreach($centralCatalog['plans'] as $remotePlan){
@@ -112,7 +112,7 @@ Nenhum e-mail preenchido no formulário nem credencial é exibido neste diagnós
 </select></label>
 <label class="field">Forma de pagamento<select name="method" required><option value="card" <?=$method==='card'?'selected':''?>>Cartão recorrente — referência R$ 19,90/mês</option><option value="pix" <?=$method==='pix'?'selected':''?>>Pix mensal — referência R$ 25,90/mês</option></select></label>
 <label class="field">Nome do comprador de teste<input name="name" type="text" required minlength="3" maxlength="120" value="<?=checkout_test_escape($postedName)?>" placeholder="Ex.: Cliente Teste"></label>
-<label class="field">E-mail para a assinatura de teste (payer_email)<input name="email" type="email" required maxlength="190" value="<?=checkout_test_escape($postedEmail)?>" placeholder="test@testuser.com"><span class="field-help">A API exige um endereço de e-mail. O usuário TESTUSER... da conta compradora serve para entrar no Mercado Pago e não é um e-mail. Use somente um e-mail de teste do Mercado Pago no domínio <code>testuser.com</code> (por exemplo, <code>testuser123456789@testuser.com</code>). Não informe senha ou código de verificação.</span></label>
+<label class="field">E-mail para a assinatura de teste (payer_email)<input name="email" type="email" required maxlength="190" value="<?=checkout_test_escape($postedEmail)?>" placeholder="E-mail da conta Comprador de teste"><span class="field-help">Use o e-mail <strong>associado à conta Comprador de teste criada para o Brasil (MLB)</strong>, no mesmo país do vendedor. Não invente e-mails no domínio <code>testuser.com</code>: o Mercado Pago verifica a conta do pagador e pode rejeitar assinaturas com a mensagem "Payer is associated with a different site". O usuário TESTUSER... é o identificador de login, não necessariamente o e-mail da conta. Não informe senha ou código de verificação.</span></label>
 <label class="agreement"><input name="ack" type="checkbox" value="1" required><span>Entendo que a simulação não cria assinatura. Ao iniciar a autorização no Mercado Pago, pode ser criada uma assinatura pendente de teste, sem ativação do Portal.</span></label>
 <?php if($canMp):?>
 <label class="field">Plano cadastrado na Central para o teste com Mercado Pago
