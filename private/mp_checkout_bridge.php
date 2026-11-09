@@ -42,6 +42,7 @@ function site_mp_sandbox_start(array $settings,array $payload): array {
             }
         }
         $instructions=[
+            'MP_SUBSCRIPTION_HTTP_400_REASON_payer_site_mismatch'=>'O Mercado Pago recusou porque o pagador está associado a outro país. Use o e-mail de uma conta COMPRADOR de teste criada para o Brasil (MLB), diferente da conta vendedora. Não use e-mails inventados.',
             'MP_TEST_SELLER_TOKEN_TYPE'=>'O token atual não é do tipo exigido pelo produto Assinaturas. Use exclusivamente o Access Token de produção da CONTA VENDEDORA DE TESTE.',
             'MP_TEST_SELLER_ID_REQUIRED'=>'Falta informar commerce_mp_test_seller_user_id no config.php privado da Central.',
             'MP_TEST_SELLER_ID_MISMATCH'=>'O Access Token não pertence ao usuário vendedor de teste configurado.',
