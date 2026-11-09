@@ -35,6 +35,8 @@ $canMp=isset($siteConfig) && is_array($siteConfig)
 $mpKeyPending=isset($siteConfig) && is_array($siteConfig)
     && ($siteConfig['mp_sandbox_checkout_enabled']??false)===true
     && strlen((string)($siteConfig['mp_sandbox_checkout_secret']??''))<32;
+$checkoutEmailDiagnosticRequested=(($_GET['diagnostico']??'')==='1');
+$checkoutEmailSelfTest=checkout_mp_test_email_valid('testuser123456789@testuser.com');
 if(($_SERVER['REQUEST_METHOD']??'GET')==='POST'){
     try{
         if (!hash_equals((string)$_SESSION['checkout_test_csrf'],(string)($_POST['csrf']??''))) {
@@ -49,7 +51,7 @@ if(($_SERVER['REQUEST_METHOD']??'GET')==='POST'){
             if(!$canMp)throw new RuntimeException('Cartão Sandbox não habilitado ou catálogo indisponível.');
             if($submitted['method']!=='card')throw new RuntimeException('Selecione cartão recorrente para testar a assinatura no Mercado Pago.');
             if(!checkout_mp_test_email_valid($submitted['email']))
-                throw new RuntimeException('Para autorizar no Mercado Pago Sandbox, informe um e-mail de teste no domínio testuser.com.');
+                throw new RuntimeException('Formato de e-mail de teste não aceito. Use um endereço como testuser123456789@testuser.com (sem espaços) e confira o diagnóstico EMAIL-V2 em checkout.php?diagnostico=1.');
             $selectedId=(int)($_POST['mp_plan_id']??0);
             $selected=null;
             foreach($centralCatalog['plans'] as $remotePlan){
@@ -85,6 +87,14 @@ if(($_SERVER['REQUEST_METHOD']??'GET')==='POST'){
 <header class="header"><div class="shell header-inner"><a class="brand" href="index.php"><span class="brand-icon">C</span> Central Financeira</a><span class="environment">AMBIENTE DE HOMOLOGAÇÃO</span></div></header>
 <main class="shell main">
 <div class="notice" role="status"><strong>Simulação, sem cobrança.</strong> A simulação não cobra nem solicita dados do cartão. Se o modo de teste do Mercado Pago for habilitado, o checkout poderá redirecionar para autorização Sandbox; nenhuma assinatura do Portal será ativada automaticamente. Utilize apenas dados fictícios ou de teste.</div>
+<?php if($checkoutEmailDiagnosticRequested):?>
+<div class="notice" role="status">
+<strong>Diagnóstico do validador de e-mail — versão EMAIL-V2:</strong>
+autoteste do formato testuser123456789@testuser.com:
+<strong><?=$checkoutEmailSelfTest?'APROVADO':'REPROVADO'?></strong>.
+Nenhum e-mail preenchido no formulário nem credencial é exibido neste diagnóstico.
+</div>
+<?php endif;?>
 <?php if($result!==null):?>
 <div class="success"><div class="check">✓</div><div><span class="step">TESTE CONCLUÍDO</span><h1>Fluxo demonstrativo validado</h1>
 <p>Recebemos os dados apenas durante esta requisição. Nenhuma assinatura foi criada e nenhum pagamento foi realizado.</p>
