@@ -38,6 +38,13 @@ function site_catalog_fetch(array $settings): array {
         $curlError=$body===false?(int)curl_errno($ch):0;
     } finally {curl_close($ch);}
     if($curlError!==0)return $fail('CURL_ERROR_'.$curlError);
+    if($status===403) {
+        // Identifica apenas a origem do bloqueio, sem expor segredo ou corpo HTTP.
+        $response=is_string($body)&&strlen($body)<2048?json_decode($body,true):null;
+        if(is_array($response)&&($response['error']??null)==='Não autorizado')
+            return $fail('AUTH_REJECTED_BY_CENTRAL');
+        return $fail('HTTP_403_BEFORE_CENTRAL_OR_UNEXPECTED');
+    }
     if($status!==200)return $fail('HTTP_'.$status);
     if(!is_string($body)||strlen($body)>50000)return $fail('RESPONSE_INVALID_SIZE');
     try{$data=json_decode($body,true,16,JSON_THROW_ON_ERROR);}catch(JsonException $e){return $fail('INVALID_JSON');}
