@@ -21,6 +21,7 @@ jobs:
         run: |
           php tests/checkout_test.php
           php tests/catalog_bridge_test.php
+          php tests/mp_checkout_bridge_test.php
       - name: Confirmar isolamento de pagamentos
         run: |
           if grep -REn '(api\.mercadopago\.com|card_number|card_token_id|access_token|commerce_master_key|rm -rf|rsync .*--delete)' --include='*.php' .; then
