@@ -37,7 +37,7 @@ function site_mp_sandbox_start(array $settings,array $payload): array {
         if(is_string($body)&&strlen($body)<=4096) {
             $remote=json_decode($body,true);
             if(is_array($remote)&&is_string($remote['code']??null)
-               &&preg_match('/^(?:MP_(PLAN|SUBSCRIPTION)_(HTTP_[1-5][0-9]{2}|FAILED)(_REASON_[a-z0-9_-]{2,40})?|MP_TEST_SELLER_(?:TOKEN_TYPE|ID_REQUIRED|ID_MISMATCH|NOT_TEST_USER|COUNTRY_MISMATCH|TOKEN_REJECTED|IDENTITY_UNAVAILABLE)|CENTRAL_(?:RATE_LIMITED|SANDBOX_DISABLED|GATEWAY_NOT_SANDBOX|TOKEN_MISSING|PLAN_UNAVAILABLE|REFERENCE_REUSED|TOKEN_INVALID|TRANSPORT_ERROR|DB_ERROR|INTERNAL_ERROR))$/D',$remote['code'])) {
+               &&preg_match('/^(?:MP_(PLAN|SUBSCRIPTION)_(HTTP_[1-5][0-9]{2}|FAILED)(_REASON_[a-z0-9_-]{2,40})?|MP_TEST_SELLER_(?:TOKEN_TYPE|ID_REQUIRED|ID_MISMATCH|NOT_TEST_USER|COUNTRY_MISMATCH|TOKEN_REJECTED|IDENTITY_UNAVAILABLE)|CENTRAL_(?:SANDBOX_DISABLED|GATEWAY_NOT_SANDBOX|TOKEN_MISSING|PLAN_UNAVAILABLE|REFERENCE_REUSED|TOKEN_INVALID|TRANSPORT_ERROR|DB_ERROR|INTERNAL_ERROR))$/D',$remote['code'])) {
                 $code=$remote['code'];
             }
         }
@@ -49,7 +49,6 @@ function site_mp_sandbox_start(array $settings,array $payload): array {
             'MP_TEST_SELLER_COUNTRY_MISMATCH'=>'A conta de teste do vendedor não pertence ao Brasil (MLB).',
             'MP_TEST_SELLER_TOKEN_REJECTED'=>'A verificação da identidade do token foi recusada pelo provedor.',
             'MP_TEST_SELLER_IDENTITY_UNAVAILABLE'=>'Não foi possível confirmar a identidade de teste do vendedor. Nenhuma assinatura foi iniciada.',
-            'CENTRAL_RATE_LIMITED'=>'A Central permite no máximo três tentativas por hora, incluindo as recusadas pelo Mercado Pago. Aguarde até completar uma hora desde a primeira tentativa recente antes de testar novamente.',
             'CENTRAL_SANDBOX_DISABLED'=>'O modo de autorização Sandbox está desabilitado na Central. Não habilite cobranças reais.',
             'CENTRAL_GATEWAY_NOT_SANDBOX'=>'Confira se Mercado Pago está selecionado, ambiente Sandbox e cobrança online desativada na Central.',
             'CENTRAL_TOKEN_MISSING'=>'Não há Access Token cadastrado na Central.',

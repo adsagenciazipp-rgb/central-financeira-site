@@ -18,10 +18,10 @@ $checkoutSource=file_get_contents(dirname(__DIR__).'/checkout.php');
 if(!is_string($bridgeSource)||!str_contains($bridgeSource,'mp_sandbox_checkout_secret')||!str_contains($bridgeSource,'X-CF-Checkout-Secret')||!str_contains($bridgeSource,'MP_(PLAN|SUBSCRIPTION)')||!str_contains($bridgeSource,'Diagnóstico:'))throw new RuntimeException('Código de diagnóstico MP seguro ausente');
 if(!is_string($checkoutSource)||!str_contains($checkoutSource,'TESTUSER...')||!str_contains($checkoutSource,'payer_email'))throw new RuntimeException('Orientação sobre login e email ausente');
 if(!str_contains($bridgeSource,'_REASON_'))throw new RuntimeException('Bridge deve reconhecer código técnico de validação remoto');
-if(!str_contains($bridgeSource,'CENTRAL_RATE_LIMITED')
-  || !str_contains($bridgeSource,'CENTRAL_DB_ERROR')
-  || !str_contains($bridgeSource,'três tentativas por hora'))
-    throw new RuntimeException('Checkout deve distinguir HTTP 429 de erro 503 do servidor');
+if(str_contains($bridgeSource,'CENTRAL_RATE_LIMITED')
+  || str_contains($bridgeSource,'três tentativas por hora')
+  || !str_contains($bridgeSource,'CENTRAL_DB_ERROR'))
+    throw new RuntimeException('Checkout Sandbox não deve sugerir limite horário, mantendo diagnóstico de falhas reais');
 if(!str_contains($bridgeSource,'MP_TEST_SELLER_')||!str_contains($bridgeSource,'TOKEN_TYPE')||!str_contains($bridgeSource,'NOT_TEST_USER'))
     throw new RuntimeException('Erros de credencial da conta vendedora de teste não estão protegidos e reconhecidos');
 if(!str_contains($checkoutSource,'Iniciar assinatura pendente no Mercado Pago (teste)'))throw new RuntimeException('Checkout deve informar status pendente');
