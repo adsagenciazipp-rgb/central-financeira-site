@@ -8,8 +8,8 @@ header('Cache-Control: no-store, private');
 header('X-Robots-Tag: noindex, nofollow, noarchive');
 header('X-Content-Type-Options: nosniff');
 header('Referrer-Policy: no-referrer');
-header('Content-Security-Policy: default-src \'none\'; style-src \'self\'; img-src \'self\'; form-action \'self\'; base-uri \'none\'; frame-ancestors \'none\'');
-session_start(['cookie_httponly'=>true, 'cookie_samesite'=>'Lax','use_strict_mode'=>true]);
+header('Content-Security-Policy: default-src \'none\'; style-src \'self\'; img-src \'self\'; form-action \'self\' https://www.mercadopago.com.br https://mercadopago.com.br https://www.mercadopago.com; base-uri \'none\'; frame-ancestors \'none\'');
+session_start(['cookie_httponly'=>true,'cookie_secure'=>true,'cookie_samesite'=>'Lax','use_strict_mode'=>true]);
 if (empty($_SESSION['checkout_test_csrf'])) $_SESSION['checkout_test_csrf']=bin2hex(random_bytes(24));
 $catalog=checkout_test_catalog();
 $centralCatalog=['ok'=>false,'plans'=>[]];
@@ -85,7 +85,7 @@ if(($_SERVER['REQUEST_METHOD']??'GET')==='POST'){
 <label class="field">Forma de pagamento<select name="method" required><option value="card" <?=$method==='card'?'selected':''?>>Cartão recorrente — referência R$ 19,90/mês</option><option value="pix" <?=$method==='pix'?'selected':''?>>Pix mensal — referência R$ 25,90/mês</option></select></label>
 <label class="field">Nome do comprador de teste<input name="name" type="text" required minlength="3" maxlength="120" value="<?=checkout_test_escape($postedName)?>" placeholder="Ex.: Cliente Teste"></label>
 <label class="field">E-mail para a assinatura de teste (payer_email)<input name="email" type="email" required maxlength="190" value="<?=checkout_test_escape($postedEmail)?>" placeholder="test@testuser.com"><span class="field-help">A API exige um endereço de e-mail. O usuário TESTUSER... da conta compradora serve para entrar no Mercado Pago e não é um e-mail. Use apenas um endereço de teste válido e nunca uma senha aqui.</span></label>
-<label class="agreement"><input name="ack" type="checkbox" value="1" required><span>Entendo que este é um teste de interface, sem pagamento, contrato, cobrança ou ativação de acesso.</span></label>
+<label class="agreement"><input name="ack" type="checkbox" value="1" required><span>Entendo que a simulação não cria assinatura. Ao iniciar a autorização no Mercado Pago, pode ser criada uma assinatura pendente de teste, sem ativação do Portal.</span></label>
 <?php if($canMp):?>
 <label class="field">Plano cadastrado na Central para o teste com Mercado Pago
 <select name="mp_plan_id" required>
