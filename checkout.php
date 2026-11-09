@@ -8,8 +8,8 @@ header('Cache-Control: no-store, private');
 header('X-Robots-Tag: noindex, nofollow, noarchive');
 header('X-Content-Type-Options: nosniff');
 header('Referrer-Policy: no-referrer');
-header('Content-Security-Policy: default-src \'none\'; style-src \'self\'; img-src \'self\'; form-action \'self\'; base-uri \'none\'; frame-ancestors \'none\'');
-session_start(['cookie_httponly'=>true, 'cookie_samesite'=>'Lax','use_strict_mode'=>true]);
+header('Content-Security-Policy: default-src \'none\'; style-src \'self\'; img-src \'self\'; form-action \'self\' https://www.mercadopago.com.br https://mercadopago.com.br https://www.mercadopago.com; base-uri \'none\'; frame-ancestors \'none\'');
+session_start(['cookie_httponly'=>true,'cookie_secure'=>true,'cookie_samesite'=>'Lax','use_strict_mode'=>true]);
 if (empty($_SESSION['checkout_test_csrf'])) $_SESSION['checkout_test_csrf']=bin2hex(random_bytes(24));
 $catalog=checkout_test_catalog();
 $centralCatalog=['ok'=>false,'plans'=>[]];
@@ -36,7 +36,8 @@ if(($_SERVER['REQUEST_METHOD']??'GET')==='POST'){
         }
         $result=checkout_test_normalize($_POST);
         if(($_POST['checkout_action']??'')==='mp'){
-            if(!$canMp || $result['method']!=='card')throw new RuntimeException('Cartão Sandbox não habilitado ou catálogo indisponível.');
+            if(!$canMp)throw new RuntimeException('Cartão Sandbox não habilitado ou catálogo indisponível.');
+            if($result['method']!=='card')throw new RuntimeException('Selecione cartão recorrente para testar a assinatura no Mercado Pago.');
             $selectedId=(int)($_POST['mp_plan_id']??0);
             $selected=null;
             foreach($centralCatalog['plans'] as $remotePlan){
@@ -83,18 +84,18 @@ if(($_SERVER['REQUEST_METHOD']??'GET')==='POST'){
 <?php foreach($catalog as $id=>$plan):?><option value="<?=checkout_test_escape($id)?>" <?=$planKey===$id?'selected':''?>><?=checkout_test_escape($plan['name'])?></option><?php endforeach;?>
 </select></label>
 <label class="field">Forma de pagamento<select name="method" required><option value="card" <?=$method==='card'?'selected':''?>>Cartão recorrente — referência R$ 19,90/mês</option><option value="pix" <?=$method==='pix'?'selected':''?>>Pix mensal — referência R$ 25,90/mês</option></select></label>
-<label class="field">Nome fictício de teste<input name="name" type="text" required minlength="3" maxlength="120" value="<?=checkout_test_escape($postedName)?>" placeholder="Ex.: Cliente Teste"></label>
-<label class="field">E-mail de teste<input name="email" type="email" required maxlength="190" value="<?=checkout_test_escape($postedEmail)?>" placeholder="teste@exemplo.com"></label>
-<label class="agreement"><input name="ack" type="checkbox" value="1" required><span>Entendo que este é um teste de interface, sem pagamento, contrato, cobrança ou ativação de acesso.</span></label>
-<button class="btn" type="submit" name="checkout_action" value="simulate">Simular continuidade <span aria-hidden="true">→</span></button>
+<label class="field">Nome do comprador de teste<input name="name" type="text" required minlength="3" maxlength="120" value="<?=checkout_test_escape($postedName)?>" placeholder="Ex.: Cliente Teste"></label>
+<label class="field">E-mail para a assinatura de teste (payer_email)<input name="email" type="email" required maxlength="190" value="<?=checkout_test_escape($postedEmail)?>" placeholder="test@testuser.com"><span class="field-help">A API exige um endereço de e-mail. O usuário TESTUSER... da conta compradora serve para entrar no Mercado Pago e não é um e-mail. Use apenas um endereço de teste válido e nunca uma senha aqui.</span></label>
+<label class="agreement"><input name="ack" type="checkbox" value="1" required><span>Entendo que a simulação não cria assinatura. Ao iniciar a autorização no Mercado Pago, pode ser criada uma assinatura pendente de teste, sem ativação do Portal.</span></label>
 <?php if($canMp):?>
 <label class="field">Plano cadastrado na Central para o teste com Mercado Pago
 <select name="mp_plan_id" required>
 <?php foreach($centralCatalog['plans'] as $remotePlan):?><option value="<?=(int)$remotePlan['id']?>"><?=checkout_test_escape($remotePlan['name'])?> — <?=checkout_test_money($remotePlan['card_cents'])?>/mês</option><?php endforeach;?>
 </select></label>
 <button class="btn" type="submit" name="checkout_action" value="mp">Iniciar autorização de cartão no Mercado Pago Sandbox</button>
-<p class="fineprint">Atenção: este botão abre o Mercado Pago e pode criar uma assinatura pendente no ambiente de testes. Não utilize cartão ou conta reais. Nenhum acesso é ativado pelo retorno do checkout.</p>
+<p class="fineprint">Somente cartão recorrente. Essa ação pode criar uma assinatura pendente de teste no Mercado Pago; nenhuma contratação no Portal é ativada pelo retorno. Faça login no Mercado Pago com o usuário de teste comprador, não com a conta real.</p>
 <?php endif;?>
+<button class="btn <?=$canMp?'btn-secondary':''?>" type="submit" name="checkout_action" value="simulate"><?=$canMp?'Apenas simular (sem Mercado Pago)':'Simular continuidade'?> <span aria-hidden="true">→</span></button>
 </form>
 <p class="fineprint">Na simulação, nenhum dado é armazenado. Ao iniciar a autorização Sandbox, nome e e-mail de teste são enviados à Central e o e-mail de teste ao Mercado Pago. O preço definitivo será consultado na Central quando a integração estiver homologada.</p>
 </section>

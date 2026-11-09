@@ -30,8 +30,19 @@ function site_mp_sandbox_start(array $settings,array $payload): array {
         $body=curl_exec($ch);
         $status=(int)curl_getinfo($ch,CURLINFO_HTTP_CODE);
     } finally {curl_close($ch);}
-    if($status!==200||!is_string($body)||strlen($body)>4096)
-        throw new RuntimeException('A Central não conseguiu iniciar o checkout de homologação.');
+    if($status!==200||!is_string($body)||strlen($body)>4096) {
+        // Apenas códigos previamente previstos no backend são exibidos.
+        // Nunca mostrar resposta bruta, cabeçalhos, credenciais ou e-mail.
+        $code='CENTRAL_HTTP_'.$status;
+        if(is_string($body)&&strlen($body)<=4096) {
+            $remote=json_decode($body,true);
+            if(is_array($remote)&&is_string($remote['code']??null)
+               &&preg_match('/^MP_(PLAN|SUBSCRIPTION)_(HTTP_[1-5][0-9]{2}|FAILED)$/D',$remote['code'])) {
+                $code=$remote['code'];
+            }
+        }
+        throw new RuntimeException('Não foi possível iniciar a autorização Sandbox. Diagnóstico: '.$code);
+    }
     try{$response=json_decode($body,true,16,JSON_THROW_ON_ERROR);}
     catch(JsonException $e){throw new RuntimeException('Resposta inválida da Central.');}
     if(!is_array($response)||!isset($response['checkout_url'])||!is_string($response['checkout_url']))
