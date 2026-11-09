@@ -41,7 +41,17 @@ function site_mp_sandbox_start(array $settings,array $payload): array {
                 $code=$remote['code'];
             }
         }
-        throw new RuntimeException('Não foi possível iniciar a autorização Sandbox. Diagnóstico: '.$code);
+        $instructions=[
+            'MP_TEST_SELLER_TOKEN_TYPE'=>'O token atual não é do tipo exigido pelo produto Assinaturas. Use exclusivamente o Access Token de produção da CONTA VENDEDORA DE TESTE.',
+            'MP_TEST_SELLER_ID_REQUIRED'=>'Falta informar commerce_mp_test_seller_user_id no config.php privado da Central.',
+            'MP_TEST_SELLER_ID_MISMATCH'=>'O Access Token não pertence ao usuário vendedor de teste configurado.',
+            'MP_TEST_SELLER_NOT_TEST_USER'=>'A conta associada ao token não foi identificada como conta de teste. Operação bloqueada.',
+            'MP_TEST_SELLER_COUNTRY_MISMATCH'=>'A conta de teste do vendedor não pertence ao Brasil (MLB).',
+            'MP_TEST_SELLER_TOKEN_REJECTED'=>'A verificação da identidade do token foi recusada pelo provedor.',
+            'MP_TEST_SELLER_IDENTITY_UNAVAILABLE'=>'Não foi possível confirmar a identidade de teste do vendedor. Nenhuma assinatura foi iniciada.',
+        ];
+        $help=$instructions[$code]??'';
+        throw new RuntimeException('Não foi possível iniciar a autorização Sandbox. Diagnóstico: '.$code.($help!==''?' — '.$help:''));
     }
     try{$response=json_decode($body,true,16,JSON_THROW_ON_ERROR);}
     catch(JsonException $e){throw new RuntimeException('Resposta inválida da Central.');}
