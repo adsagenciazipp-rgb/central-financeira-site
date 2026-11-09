@@ -40,11 +40,15 @@ if(($_SERVER['REQUEST_METHOD']??'GET')==='POST'){
         if (!hash_equals((string)$_SESSION['checkout_test_csrf'],(string)($_POST['csrf']??''))) {
             throw new RuntimeException('Sessão expirada. Atualize a página e tente novamente.');
         }
-        $result=checkout_test_normalize($_POST);
-        if(($_POST['checkout_action']??'')==='mp'){
+        // Dados validados não representam sucesso. A simulação só conclui
+        // depois que a ação escolhida é reconhecida; o Mercado Pago redireciona
+        // ou mostra erro, mas nunca reutiliza o resultado demonstrativo.
+        $submitted=checkout_test_normalize($_POST);
+        $action=(string)($_POST['checkout_action']??'');
+        if($action==='mp'){
             if(!$canMp)throw new RuntimeException('Cartão Sandbox não habilitado ou catálogo indisponível.');
-            if($result['method']!=='card')throw new RuntimeException('Selecione cartão recorrente para testar a assinatura no Mercado Pago.');
-            if(!preg_match('/^[a-z0-9._%+-]+@testuser\\.com$/D',$result['email']))
+            if($submitted['method']!=='card')throw new RuntimeException('Selecione cartão recorrente para testar a assinatura no Mercado Pago.');
+            if(!preg_match('/^[a-z0-9._%+-]+@testuser\\.com$/D',$submitted['email']))
                 throw new RuntimeException('Para autorizar no Mercado Pago Sandbox, informe um e-mail de teste no domínio testuser.com.');
             $selectedId=(int)($_POST['mp_plan_id']??0);
             $selected=null;
@@ -54,16 +58,21 @@ if(($_SERVER['REQUEST_METHOD']??'GET')==='POST'){
             if(!$selected)throw new RuntimeException('Plano não encontrado na Central.');
             $reference=bin2hex(random_bytes(20));
             $response=site_mp_sandbox_start($siteConfig,[
-                'plan_id'=>$selectedId,'method'=>'card','name'=>$result['name'],
-                'email'=>$result['email'],'terms'=>'1','reference'=>$reference,
+                'plan_id'=>$selectedId,'method'=>'card','name'=>$submitted['name'],
+                'email'=>$submitted['email'],'terms'=>'1','reference'=>$reference,
                 'visitor'=>hash_hmac('sha256',(string)($_SERVER['REMOTE_ADDR']??'unknown'),(string)$siteConfig['catalog_secret']),
             ]);
             $_SESSION['checkout_test_csrf']=bin2hex(random_bytes(24));
             header('Location: '.site_mp_checkout_url((string)$response['checkout_url']),true,303);
             exit;
         }
+        if($action!=='simulate') {
+            throw new InvalidArgumentException('Selecione uma ação válida para continuar.');
+        }
+        $result=$submitted;
         $_SESSION['checkout_test_csrf']=bin2hex(random_bytes(24));
     } catch (InvalidArgumentException|RuntimeException $e) {
+        $result=null; // Falha na autorização nunca vira "Teste concluído".
         $error=$e->getMessage();
     }
 }
