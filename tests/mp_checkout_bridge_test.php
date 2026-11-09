@@ -17,5 +17,6 @@ $bridgeSource=file_get_contents(dirname(__DIR__).'/private/mp_checkout_bridge.ph
 $checkoutSource=file_get_contents(dirname(__DIR__).'/checkout.php');
 if(!is_string($bridgeSource)||!str_contains($bridgeSource,'mp_sandbox_checkout_secret')||!str_contains($bridgeSource,'X-CF-Checkout-Secret')||!str_contains($bridgeSource,'MP_(PLAN|SUBSCRIPTION)')||!str_contains($bridgeSource,'Diagnóstico:'))throw new RuntimeException('Código de diagnóstico MP seguro ausente');
 if(!is_string($checkoutSource)||!str_contains($checkoutSource,'TESTUSER...')||!str_contains($checkoutSource,'payer_email'))throw new RuntimeException('Orientação sobre login e email ausente');
+if(!str_contains($checkoutSource,'Iniciar assinatura pendente no Mercado Pago (teste)'))throw new RuntimeException('Checkout deve informar status pendente');
 if(!str_contains($checkoutSource,'Apenas simular (sem Mercado Pago)'))throw new RuntimeException('Simulação não distinguida da autorização');
 echo "OK: opt-in, endpoint restrito e redirecionamento Mercado Pago validado.\n";
