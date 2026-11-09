@@ -36,7 +36,8 @@ if(($_SERVER['REQUEST_METHOD']??'GET')==='POST'){
         }
         $result=checkout_test_normalize($_POST);
         if(($_POST['checkout_action']??'')==='mp'){
-            if(!$canMp || $result['method']!=='card')throw new RuntimeException('Cartão Sandbox não habilitado ou catálogo indisponível.');
+            if(!$canMp)throw new RuntimeException('Cartão Sandbox não habilitado ou catálogo indisponível.');
+            if($result['method']!=='card')throw new RuntimeException('Selecione cartão recorrente para testar a assinatura no Mercado Pago.');
             $selectedId=(int)($_POST['mp_plan_id']??0);
             $selected=null;
             foreach($centralCatalog['plans'] as $remotePlan){
