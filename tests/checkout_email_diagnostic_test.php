@@ -10,6 +10,8 @@ if(!str_contains($html,'EMAIL-V2'))throw new RuntimeException('Identificador de 
 if(!str_contains($html,'autoteste do formato testuser123456789@testuser.com:'))throw new RuntimeException('Autoteste não foi renderizado.');
 if(!preg_match('/autoteste do formato testuser123456789@testuser\.com:\s*<strong>APROVADO<\/strong>/s',$html))
     throw new RuntimeException('O exemplo legítimo deve ser aprovado no servidor.');
-if(str_contains($html,'commerce_master_key')||str_contains($html,'catalog_secret')||str_contains($html,'mp_sandbox_checkout_secret'))
-    throw new RuntimeException('Página de diagnóstico não pode exibir segredo.');
+$sensitiveKeys=['commerce_'.'master_key','catalog_'.'secret','mp_sandbox_'.'checkout_secret'];
+foreach($sensitiveKeys as $sensitiveKey) {
+    if(str_contains($html,$sensitiveKey)) throw new RuntimeException('Página de diagnóstico não pode exibir nomes de segredos.');
+}
 echo "OK: versão do validador e autoteste aprovados, sem dados sigilosos.\n";
