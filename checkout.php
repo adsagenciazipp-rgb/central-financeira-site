@@ -13,9 +13,13 @@ session_start(['cookie_httponly'=>true, 'cookie_samesite'=>'Lax','use_strict_mod
 if (empty($_SESSION['checkout_test_csrf'])) $_SESSION['checkout_test_csrf']=bin2hex(random_bytes(24));
 $catalog=checkout_test_catalog();
 $centralCatalog=['ok'=>false,'plans'=>[]];
+$catalogDiag='CONFIG_FILE_MISSING';
 if(is_file(__DIR__.'/config.php')) {
     $siteConfig=require __DIR__.'/config.php';
-    if(is_array($siteConfig)) $centralCatalog=site_catalog_fetch($siteConfig);
+    if(is_array($siteConfig)) {
+        $centralCatalog=site_catalog_fetch($siteConfig);
+        $catalogDiag=(string)($centralCatalog['diagnostic']??'UNKNOWN');
+    } else {$catalogDiag='CONFIG_NOT_ARRAY';}
 }
 $planKey=(string)($_POST['plan']??$_GET['plano']??'familiar');
 if(!isset($catalog[$planKey]))$planKey='familiar';
@@ -94,7 +98,7 @@ if(($_SERVER['REQUEST_METHOD']??'GET')==='POST'){
 </form>
 <p class="fineprint">Na simulação, nenhum dado é armazenado. Ao iniciar a autorização Sandbox, nome e e-mail de teste são enviados à Central e o e-mail de teste ao Mercado Pago. O preço definitivo será consultado na Central quando a integração estiver homologada.</p>
 </section>
-<aside class="panel summary"><div class="summary-tag">Resumo de referência</div><h2>Plano Mensal Familiar</h2><p>Financeiro pessoal e familiar, para até dois integrantes e um espaço pessoal.</p><div class="divider"></div><div class="method"><span>Cartão recorrente</span><strong>R$ 19,90 / mês</strong></div><div class="method"><span>Pix mensal manual</span><strong>R$ 25,90 / mês</strong></div><div class="divider"></div><?php if($centralCatalog['ok']):?><p class="fineprint"><strong>Preços consultados na Central (somente leitura):</strong></p><?php foreach($centralCatalog['plans'] as $cp):?><div class="method"><span><?=checkout_test_escape($cp['name'])?></span><strong>Cartão <?=checkout_test_money($cp['card_cents'])?> · Pix <?=checkout_test_money($cp['pix_cents'])?></strong></div><?php endforeach;?><?php else:?><p class="fineprint">A conexão com os planos da Central ainda não foi configurada ou está indisponível.</p><?php endif;?><p class="fineprint">Valores do formulário demonstrativo são provisórios. A autorização Sandbox, quando habilitada, utiliza o preço validado pela Central e não ativa a assinatura no Portal.</p></aside>
+<aside class="panel summary"><div class="summary-tag">Resumo de referência</div><h2>Plano Mensal Familiar</h2><p>Financeiro pessoal e familiar, para até dois integrantes e um espaço pessoal.</p><div class="divider"></div><div class="method"><span>Cartão recorrente</span><strong>R$ 19,90 / mês</strong></div><div class="method"><span>Pix mensal manual</span><strong>R$ 25,90 / mês</strong></div><div class="divider"></div><?php if($centralCatalog['ok']):?><p class="fineprint"><strong>Preços consultados na Central (somente leitura):</strong></p><?php foreach($centralCatalog['plans'] as $cp):?><div class="method"><span><?=checkout_test_escape($cp['name'])?></span><strong>Cartão <?=checkout_test_money($cp['card_cents'])?> · Pix <?=checkout_test_money($cp['pix_cents'])?></strong></div><?php endforeach;?><?php else:?><p class="fineprint">A conexão com os planos da Central ainda não foi configurada ou está indisponível.</p><?php if(($_GET['diagnostico']??'')==='1'):?><p class="fineprint" role="status"><strong>Diagnóstico de comunicação:</strong> <?=checkout_test_escape($catalogDiag)?></p><?php endif;?><?php endif;?><p class="fineprint">Valores do formulário demonstrativo são provisórios. A autorização Sandbox, quando habilitada, utiliza o preço validado pela Central e não ativa a assinatura no Portal.</p></aside>
 </div>
 <?php endif;?>
 </main><footer class="shell footer">Central Financeira · Ambiente de testes · <a href="index.php">Voltar à página inicial</a></footer>
