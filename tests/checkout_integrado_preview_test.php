@@ -5,7 +5,7 @@ ob_start();
 require $root.'/central-financeira/checkout-integrado-preview.php';
 $html=(string)ob_get_clean();
 function previewCheck(bool $result,string $note):void {if(!$result)throw new RuntimeException('PREVIEW CHECKOUT: '.$note);}
-foreach(['noindex,nofollow','sem cobrança','Plano Mensal Familiar','R$ 19,90','data-plan="empresarial"','Crie sua senha','Cartão de crédito','Mercado Pago','não há cadastro','demo-finish'] as $needle)
+foreach(['noindex,nofollow','sem cobrança','Plano Mensal Familiar','R$ 19,90','data-plan="empresarial"','Crie sua senha','Cartão de crédito','Mercado Pago','não cadastra contas','demo-finish'] as $needle)
  previewCheck(str_contains($html,$needle),'falta '.$needle);
 $phpSource=(string)file_get_contents($root.'/central-financeira/checkout-integrado-preview.php');
 previewCheck(str_contains($phpSource,"form-action 'none'") && str_contains($phpSource,"frame-ancestors 'none'"),'CSP segura no servidor');
