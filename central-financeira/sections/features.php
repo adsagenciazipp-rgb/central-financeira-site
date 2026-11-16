@@ -1,21 +1,21 @@
 <section class="section section-problems" aria-labelledby="problem-title">
   <div class="container two-column">
     <div class="section-heading"><span class="eyebrow">Você se identifica?</span>
-      <h2 id="problem-title">As contas estão em dia, mas a sua <em>tranquilidade não?</em></h2>
-      <p>Organização financeira não deveria depender de planilhas espalhadas, anotações esquecidas ou da memória.</p>
+      <h2 id="problem-title">O dinheiro acaba antes do mês? <em>Você precisa enxergar o que está acontecendo.</em></h2>
+      <p>Não precisa estar com as contas em dia para começar. Precisa saber o que entra, o que sai, o que ficou atrasado e o que ainda vai vencer.</p>
       <a class="underline-link" href="#beneficios">Descubra o que muda ↗</a>
     </div>
-    <div class="problem-list"><div><span>01</span><p>Chega o fim do mês e você não sabe exatamente para onde foi seu dinheiro.</p></div>
-      <div><span>02</span><p>Despesas pessoais e do negócio acabam se misturando.</p></div>
-      <div><span>03</span><p>As contas futuras aparecem de surpresa, sem espaço no orçamento.</p></div>
-      <div><span>04</span><p>Você quer se organizar, mas falta uma ferramenta prática para começar.</p></div>
+    <div class="problem-list"><div><span>01</span><p>O salário cai, você paga as contas e não entende onde foi parar o restante.</p></div>
+      <div><span>02</span><p>O dinheiro da empresa paga as despesas da casa — e você perde a noção do caixa.</p></div>
+      <div><span>03</span><p>A fatura do cartão, as parcelas e os boletos vencem juntos e apertam o orçamento.</p></div>
+      <div><span>04</span><p>Você anota em papel, conversa de WhatsApp ou na cabeça e acaba esquecendo alguma conta.</p></div>
     </div>
   </div>
 </section>
 <section class="section section-features" id="beneficios" aria-labelledby="benefits-title">
   <div class="container"><div class="section-title-center"><span class="eyebrow">Mais controle, menos complicação</span>
-    <h2 id="benefits-title">Tudo o que importa para o seu dinheiro <em>fazer sentido.</em></h2>
-    <p>Uma plataforma para registrar, acompanhar e planejar, sem precisar ser especialista em finanças.</p>
+    <h2 id="benefits-title">Saiba quanto entra, quanto sai e <em>o que ainda está por vir.</em></h2>
+    <p>Registre seus gastos, confira o que está pendente e visualize os próximos meses para tomar decisões com mais informação.</p>
   </div>
   <div class="feature-grid">
     <article class="feature-card feature-accent"><span class="feature-icon">↗</span><h3>Receitas e despesas</h3><p>Registre o que entra e sai e acompanhe o orçamento com mais clareza.</p><small>01 / CONTROLE</small></article>
@@ -38,24 +38,24 @@
     <div class="insight-head"><span>◈ Central Financeira</span><small>Relatório mensal</small></div>
     <div class="insight-balance"><small>Panorama do mês</small><strong>Veja para onde seu dinheiro vai.</strong></div>
     <div class="insight-rings"><div class="insight-donut" aria-hidden="true"></div><ul><li><i></i> Moradia</li><li><i></i> Alimentação</li><li><i></i> Transporte</li><li><i></i> Outros</li></ul></div>
-    <div class="insight-footer"><span>Planejar hoje</span><strong>é viver mais leve amanhã. ↗</strong></div>
+    <div class="insight-footer"><span>Veja as contas</span><strong>antes de elas vencerem. ↗</strong></div>
     <small class="insight-caption">Prévia ilustrativa do sistema</small>
   </div></div>
 </section>
 <section class="section audience" aria-labelledby="audience-title">
   <div class="container audience-grid"><div class="audience-heading"><span class="eyebrow">Feita para a vida real</span>
-    <h2 id="audience-title">Para quem quer organizar o presente e <em>planejar o futuro.</em></h2><p>Você não precisa entender de contabilidade para começar a cuidar melhor das suas finanças.</p>
+    <h2 id="audience-title"><em>Central Financeira:</em> organize sua casa ou as finanças do seu negócio.</h2><p>Para famílias, autônomos, MEIs e pequenos empresários que precisam de controle sem um sistema complicado nem caro.</p>
   </div><div class="audience-list">
-    <p><span>↗</span> Quem quer organizar as contas da família.</p><p><span>↗</span> Quem está iniciando um negócio.</p>
-    <p><span>↗</span> Quem trabalha por conta própria.</p><p><span>↗</span> Quem precisa separar dinheiro pessoal e empresarial.</p>
-    <p><span>↗</span> Quem quer antecipar as despesas dos próximos meses.</p>
+    <p><span>↗</span> Quem precisa fazer o salário render até o fim do mês.</p><p><span>↗</span> Quem começou um pequeno negócio e quer cuidar do caixa.</p>
+    <p><span>↗</span> Quem recebe por conta própria e precisa acompanhar pagamentos.</p><p><span>↗</span> Quem quer separar o dinheiro da casa e da empresa.</p>
+    <p><span>↗</span> Quem precisa se preparar para parcelas, cartões e boletos.</p>
   </div></div>
 </section>
 <section class="section bonus" aria-labelledby="bonus-title">
   <div class="container bonus-shell"><div><span class="eyebrow">Mais que um sistema</span>
-    <h2 id="bonus-title">Ferramentas para organizar. <em>Conhecimento para evoluir.</em></h2>
-    <p>Além da plataforma, os planos incluem conteúdos de apoio para criar uma relação mais consciente com o dinheiro.</p>
-    <a class="btn btn-cream" href="#planos">Quero aproveitar os bônus ↗</a></div>
+    <h2 id="bonus-title">A Central Financeira organiza suas contas. <em>Os bônus ensinam você a cuidar melhor delas.</em></h2>
+    <p>Os dois planos incluem curso de gestão financeira, videoaulas práticas e materiais de apoio para transformar o controle em hábito.</p>
+    <a class="btn btn-cream" href="#planos">Quero o sistema e os bônus ↗</a></div>
     <div class="bonus-items">
       <div class="bonus-tile"><span>01</span><div><h3>Curso de gestão financeira</h3><p>Orientações para construir uma rotina financeira mais organizada.</p></div></div>
       <div class="bonus-tile"><span>02</span><div><h3>Videoaulas práticas</h3><p>Conteúdos para compreender e aplicar o controle financeiro no dia a dia.</p></div></div>

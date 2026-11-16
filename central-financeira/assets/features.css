@@ -29,3 +29,7 @@
 .bonus-shell p{line-height:1.8}.bonus-shell .btn{margin-top:16px;background:#0f5945;color:#fff}.bonus-items{display:grid;gap:15px}
 .bonus-tile{display:flex;gap:18px;background:#fff;border:1px solid #e0e8dc;border-radius:15px;padding:19px}.bonus-tile>span{font-family:Georgia,serif;color:#359775;font-size:30px}
 .bonus-tile h3{margin:0 0 6px;font-size:17px}.bonus-tile p{font-size:13px;line-height:1.6;margin:0}
+
+/* V2: contraste legível, inclusive em telas com baixo brilho */
+.audience{background:#123d32}.audience .audience-heading>p{color:#e7f1eb;opacity:1}.audience-list p{color:#f3fcf5!important;font-weight:700}.audience-list span{color:#103d31;background:#c8f0bd}.audience-list{border-color:#67887b}.audience-list p{border-color:#67887b}
+.bonus-shell p{color:#304c43}.bonus-tile p{color:#415e53}
