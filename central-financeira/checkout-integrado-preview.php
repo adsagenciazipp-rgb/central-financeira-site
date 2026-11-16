@@ -22,16 +22,16 @@ header("Content-Security-Policy: default-src 'none'; script-src 'self'; style-sr
 </head><body>
 <header class="top"><div class="wrap top-inner"><a href="/central-financeira/" class="brand">◈ <strong>Central Financeira</strong></a><span class="top-status">Prévia de homologação visual · sem cobrança</span></div></header>
 <main class="wrap">
-<div class="preview-note" role="status">Esta é uma prévia para avaliar o design. Não informe dados verdadeiros: não há cadastro, envio de informações ou processamento de cartões nesta página.</div>
+<div class="preview-note" role="status">Homologação no site principal: planos reais identificados como #3 (Familiar) e #4 (Familiar + Empresarial). Esta prévia não recebe dados reais, não cadastra contas e não realiza cobrança.</div>
 <section class="intro" aria-label="Apresentação da contratação">
 <div><span class="overline">ASSINATURA MENSAL · PLATAFORMA DE GESTÃO</span><h1>Seu financeiro organizado <em>começa aqui.</em></h1><p>Escolha o plano, crie sua senha e finalize o pagamento: tudo em uma única experiência.</p></div>
 <div class="stepper" aria-label="Etapas da contratação"><div><span>01</span> Escolha seu plano</div><div><span>02</span> Crie seu acesso</div><div><span>03</span> Pague com segurança</div></div>
 </section>
-<div class="tab-bar" role="group" aria-label="Escolha do plano"><button type="button" class="tab selected" data-plan="familiar" aria-pressed="true">Gestão Familiar</button><button type="button" class="tab" data-plan="empresarial" aria-pressed="false">Familiar + Empresarial</button></div>
+<div class="tab-bar" role="group" aria-label="Escolha do plano"><button type="button" class="tab selected" data-plan="familiar" data-plan-id="3" aria-pressed="true">Gestão Familiar</button><button type="button" class="tab" data-plan="empresarial" data-plan-id="4" aria-pressed="false">Familiar + Empresarial</button></div>
 <section class="checkout-layout" aria-label="Detalhes do checkout">
 <div class="product-side">
 <span class="overline" id="product-label">PARA SUA VIDA PESSOAL</span>
-<h2 id="product-name">Plano Mensal Familiar</h2>
+<h2 id="product-name">Plano Mensal Familiar</h2><p class="plan-reference">Identificação do produto: <strong id="product-id">Plano #3</strong></p>
 <p id="product-description">Controle os gastos da casa, os cartões e as contas dos próximos meses em uma plataforma simples.</p>
 <div class="price"><strong id="product-price">R$ 19,90</strong><span>/ mês · cartão recorrente</span></div>
 <ul id="product-benefits">
@@ -50,7 +50,7 @@ header("Content-Security-Policy: default-src 'none'; script-src 'self'; style-sr
 <div class="fields"><div class="sample-card">Validade <strong>MM / AA</strong></div><div class="sample-card">Código de segurança <strong>•••</strong></div><div class="sample-card wide">Nome no cartão <strong>Conforme impresso</strong></div></div>
 </div>
 <p class="legal"><span class="check-mock" aria-hidden="true">✓</span> Autorizo a cobrança mensal do plano escolhido. O acesso será liberado após a confirmação do pagamento.</p>
-<button type="button" id="demo-finish" class="pay-button">Visualizar finalização — sem cobrança</button>
+<button type="button" id="demo-finish" class="pay-button">Simular conclusão do plano #3 — sem cobrança</button>
 <p class="footnote">Na versão final, os campos do cartão serão renderizados pelo Mercado Pago. Não armazenaremos número, validade ou CVV.</p>
 <div id="demo-result" class="demo-result" role="status" aria-live="polite" hidden>Fluxo visual aprovado para demonstração. Nenhum pagamento, conta ou e-mail foi criado. A integração com o Mercado Pago será habilitada somente após testes completos.</div>
 </div></section>
