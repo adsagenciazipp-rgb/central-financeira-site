@@ -12,6 +12,10 @@ previewCheck(str_contains($phpSource,"form-action 'none'") && str_contains($phpS
 $js=(string)file_get_contents($root.'/central-financeira/assets/checkout-integrado-preview.js');
 $css=(string)file_get_contents($root.'/central-financeira/assets/checkout-integrado-preview.css');
 previewCheck(str_contains($js,'R$ 34,90') && str_contains($js,'R$ 19,90'),'dois preços no preview');
+previewCheck(str_contains($html,'data-plan-id="3"') && str_contains($html,'data-plan-id="4"'),'IDs oficiais dos dois planos');
+previewCheck(str_contains($js,'id: 3') && str_contains($js,'id: 4'),'mapa imutável de plano 3 e 4');
+previewCheck(str_contains($js,"requested === '4'") && str_contains($js,'URLSearchParams'),'URLs de homologação selecionam o plano');
+previewCheck(str_contains($html,'Simular conclusão do plano #3'),'CTA da prévia não promete pagamento real');
 previewCheck(str_contains($js,'textContent') && str_contains($js,'replaceChildren'),'troca dos benefícios sem HTML dinâmico');
 foreach(['fetch(', 'XMLHttpRequest', 'sendBeacon', 'localStorage','sessionStorage','navigator.credentials','api.'.'mercadopago.com'] as $danger)
  previewCheck(!str_contains($js,$danger),'preview não pode transmitir dados: '.$danger);
