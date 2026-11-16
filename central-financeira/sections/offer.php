@@ -31,14 +31,14 @@
       <p class="price-description">Tudo para colocar as finanças pessoais e da família em ordem.</p>
       <div class="price"><span>R$</span><strong>19,90</strong><small>/mês</small></div><div class="price-divider"></div>
       <ul><li>Controle de receitas e despesas</li><li>Cartões, bancos e saldo em caixa</li><li>Previsão e organização de contas</li><li>Relatórios e metas financeiras</li><li>Conteúdos e videoaulas bônus</li></ul>
-      <a class="btn btn-dark btn-block" href="<?=lp_escape($store)?>" target="_blank" rel="noopener noreferrer">Escolher Gestão Familiar <span aria-hidden="true">↗</span></a>
+      <a class="btn btn-dark btn-block" href="<?=lp_escape($storeFamiliar)?>" target="_blank" rel="noopener noreferrer">Escolher Gestão Familiar <span aria-hidden="true">↗</span></a>
     </article>
     <article class="pricing-card featured" aria-label="Plano Gestão Familiar e Empresarial por R$ 34,90 ao mês">
       <div class="popular-tag">Mais completo</div><span class="price-category">Para sua vida e seu negócio</span>
       <h3>Familiar + Empresarial</h3><p class="price-description">Sua vida financeira e o negócio organizados, cada um no seu espaço.</p>
       <div class="price"><span>R$</span><strong>34,90</strong><small>/mês</small></div><div class="price-divider"></div>
       <ul><li>Tudo do plano Gestão Familiar</li><li>Gestão de receitas e despesas empresariais</li><li>Controle de mensalidades e recebíveis</li><li>Previsibilidade e relatórios do negócio</li><li>Conteúdos e videoaulas bônus</li></ul>
-      <a class="btn btn-lime btn-block" href="<?=lp_escape($store)?>" target="_blank" rel="noopener noreferrer">Quero o plano completo <span aria-hidden="true">↗</span></a>
+      <a class="btn btn-lime btn-block" href="<?=lp_escape($storeCompleto)?>" target="_blank" rel="noopener noreferrer">Quero o plano completo <span aria-hidden="true">↗</span></a>
     </article>
   </div>
   <p class="pricing-disclaimer">Valores de referência para assinatura mensal. A seleção definitiva e as condições aplicáveis são confirmadas na loja da Central. Nenhuma cobrança é processada nesta página. Pagamentos reais ainda dependem de habilitação.</p>
