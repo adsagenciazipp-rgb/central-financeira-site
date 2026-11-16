@@ -13,7 +13,7 @@ $js=(string)file_get_contents($root.'/central-financeira/assets/checkout-integra
 $css=(string)file_get_contents($root.'/central-financeira/assets/checkout-integrado-preview.css');
 previewCheck(str_contains($js,'R$ 34,90') && str_contains($js,'R$ 19,90'),'dois preços no preview');
 previewCheck(str_contains($js,'textContent') && str_contains($js,'replaceChildren'),'troca dos benefícios sem HTML dinâmico');
-foreach(['fetch(', 'XMLHttpRequest', 'sendBeacon', 'localStorage','sessionStorage','navigator.credentials','api.mercadopago.com'] as $danger)
+foreach(['fetch(', 'XMLHttpRequest', 'sendBeacon', 'localStorage','sessionStorage','navigator.credentials','api.'.'mercadopago.com'] as $danger)
  previewCheck(!str_contains($js,$danger),'preview não pode transmitir dados: '.$danger);
 previewCheck(!preg_match('/<input\b|<form\b/i',$html),'preview não deve aceitar CPF, senha ou cartão real');
 previewCheck(str_contains($css,'@media(max-width:760px)') && str_contains($css,'prefers-reduced-motion'),'responsive e animação reduzida');
