@@ -33,7 +33,7 @@ expect_landing(preg_match('~data:image/jpeg;base64,([A-Za-z0-9+/=]+)~',$portrait
  'fotografia real embutida na mídia SVG');
 $photo=base64_decode($photoMatches[1],true);
 expect_landing(is_string($photo) &&strlen($photo)>1800
-  &&str_starts_with($photo,"\\xFF\\xD8")&&str_ends_with($photo,"\\xFF\\xD9"),
+  &&str_starts_with($photo,hex2bin('ffd8'))&&str_ends_with($photo,hex2bin('ffd9')),
  'imagem JPEG da Naiara não pode estar truncada');
 $css='';
 foreach(['landing.css','hero.css','features.css','offers.css','responsive.css'] as $asset)
