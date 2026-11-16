@@ -28,6 +28,13 @@ expect_landing(stripos($html,'prévia ilustrativa do sistema')!==false,
 expect_landing(str_contains($html,'assets/naiara.svg')
   &&is_file($root.'/central-financeira/assets/naiara.svg'),
  'usar a foto enviada da Naiara na página comercial');
+$portrait=(string)file_get_contents($root.'/central-financeira/assets/naiara.svg');
+expect_landing(preg_match('~data:image/jpeg;base64,([A-Za-z0-9+/=]+)~',$portrait,$photoMatches)===1,
+ 'fotografia real embutida na mídia SVG');
+$photo=base64_decode($photoMatches[1],true);
+expect_landing(is_string($photo) &&strlen($photo)>1800
+  &&str_starts_with($photo,"\\xFF\\xD8")&&str_ends_with($photo,"\\xFF\\xD9"),
+ 'imagem JPEG da Naiara não pode estar truncada');
 $css='';
 foreach(['landing.css','hero.css','features.css','offers.css','responsive.css'] as $asset)
   $css.=(string)@file_get_contents($root.'/central-financeira/assets/'.$asset);
