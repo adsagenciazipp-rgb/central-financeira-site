@@ -45,3 +45,16 @@
 
 /* V2: dispositivos ocupam o hero sem cartão de retrato */
 @media(max-width:760px){.hero-stage{overflow:visible}.person-card{display:none!important}}
+
+
+/* V3: vitrines adaptadas para celular */
+@media(max-width:760px){
+.section-features .feature-showcase{grid-template-columns:1fr;gap:18px}
+.section-features .feature-showcase-card{padding:21px;gap:18px}
+.feature-card-copy{grid-template-columns:44px 1fr;column-gap:13px}
+.feature-card-copy h3{font-size:20px}
+.feature-card-copy p{font-size:14px}
+.feature-preview{min-height:190px}
+.preview-placeholder{min-height:152px}
+.about-photo img{object-position:center 40%}
+}

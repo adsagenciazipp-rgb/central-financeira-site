@@ -25,16 +25,10 @@ expect_landing(stripos($html,'depoimentos sobre nossos materiais anteriores')!==
  'depoimentos da antiga planilha não podem ser apresentados como prova do novo sistema');
 expect_landing(stripos($html,'prévia ilustrativa do sistema')!==false,
  'mockups em CSS devem ser honestamente identificados como ilustração');
-expect_landing(str_contains($html,'assets/naiara.svg')
-  &&is_file($root.'/central-financeira/assets/naiara.svg'),
- 'usar a foto enviada da Naiara na página comercial');
-$portrait=(string)file_get_contents($root.'/central-financeira/assets/naiara.svg');
-expect_landing(preg_match('~data:image/jpeg;base64,([A-Za-z0-9+/=]+)~',$portrait,$photoMatches)===1,
- 'fotografia real embutida na mídia SVG');
-$photo=base64_decode($photoMatches[1],true);
-expect_landing(is_string($photo) &&strlen($photo)>1800
-  &&str_starts_with($photo,hex2bin('ffd8'))&&str_ends_with($photo,hex2bin('ffd9')),
- 'imagem JPEG da Naiara não pode estar truncada');
+expect_landing(str_contains($html,'assets/naiara-retrato-original.jpg'), 'foto original em alta qualidade usada na página');
+$photo=(string)@file_get_contents($root.'/central-financeira/assets/naiara-retrato-original.jpg');
+expect_landing(strlen($photo)>15000 && str_starts_with($photo,hex2bin('ffd8')) && str_ends_with($photo,hex2bin('ffd9')),
+ 'arquivo JPEG da Naiara íntegro');
 $css='';
 foreach(['landing.css','hero.css','features.css','offers.css','responsive.css'] as $asset)
   $css.=(string)@file_get_contents($root.'/central-financeira/assets/'.$asset);

@@ -29,6 +29,7 @@ jobs:
           php tests/checkout_submission_test.php unknown
           php tests/landing_page_test.php
           php tests/landing_page_v2_test.php
+          php tests/landing_page_v3_test.php
       - name: Confirmar isolamento de pagamentos
         run: |
           if grep -REn '(api\.mercadopago\.com|card_number|card_token_id|access_token|commerce_master_key|rm -rf|rsync .*--delete)' --include='*.php' .; then

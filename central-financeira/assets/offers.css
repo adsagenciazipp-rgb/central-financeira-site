@@ -39,3 +39,12 @@
 .site-footer .brand-copy strong{color:#fff}.site-footer .brand-copy small{color:#9ab9aa}.site-footer p{max-width:250px;font-size:13px;color:#9fb9ab;margin:17px 0}
 .footer-links{display:flex;flex-direction:column;gap:14px;font-size:13px}.footer-links a:hover{color:#b8f0a8}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;border-top:1px solid #2d4a3e;padding-block:23px;color:#8ca89a;font-size:11px}
+
+
+/* V3: retrato original sem retoque e legendas legíveis */
+.about-photo{aspect-ratio:390/500;background:#20382e}
+.about-photo img{object-fit:cover;object-position:center 44%;width:100%;height:100%}
+.about-photo span{text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.testimonial-card figcaption strong{font-size:13px;color:#213e32}
+.testimonial-card figcaption small,.testimonial-context{font-size:12px;color:#426454;line-height:1.6}
+.pricing-disclaimer{color:#385748!important;font-size:12px}

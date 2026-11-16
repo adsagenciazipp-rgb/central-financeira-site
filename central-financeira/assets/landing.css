@@ -31,3 +31,11 @@ h2 em{font-weight:500;font-style:normal;color:#258f6e}
 @keyframes cf-reveal{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @media (prefers-reduced-motion:no-preference){.hero-copy{animation:cf-reveal .75s both}.hero-stage{animation:cf-reveal .85s .12s both}.feature-card,.testimonial-card,.pricing-card,.bonus-tile{transition:transform .22s ease,box-shadow .22s ease}.feature-card:hover,.testimonial-card:hover,.pricing-card:hover,.bonus-tile:hover{transform:translateY(-4px);box-shadow:0 16px 35px rgba(13,42,32,.11)}}
 @media (prefers-reduced-motion:reduce){.hero-copy,.hero-stage{animation:none!important}.feature-card,.testimonial-card,.pricing-card,.bonus-tile{transition:none!important}}
+
+
+/* V3: contraste reforçado nas superfícies escuras */
+.audience .audience-heading>p,.audience .audience-list p{color:#f0faf2!important;opacity:1!important}
+.audience .eyebrow{color:#d2f9d3!important}
+.feature-accent .feature-card-copy p,.feature-accent .feature-label{opacity:1!important}
+.hero .hero-lead{color:#e7f5eb}
+.section-features .feature-card:not(.feature-accent) p{color:#365346}

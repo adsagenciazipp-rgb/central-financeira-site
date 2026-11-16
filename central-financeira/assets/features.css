@@ -33,3 +33,26 @@
 /* V2: contraste legível, inclusive em telas com baixo brilho */
 .audience{background:#123d32}.audience .audience-heading>p{color:#e7f1eb;opacity:1}.audience-list p{color:#f3fcf5!important;font-weight:700}.audience-list span{color:#103d31;background:#c8f0bd}.audience-list{border-color:#67887b}.audience-list p{border-color:#67887b}
 .bonus-shell p{color:#304c43}.bonus-tile p{color:#415e53}
+
+
+/* V3: vitrines de funcionalidades com espaços exclusivos para prints reais */
+.section-features .feature-showcase{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.section-features .feature-showcase-card{display:grid;grid-template-rows:auto 1fr;min-height:0;padding:25px;gap:22px;overflow:hidden;background:#f7faf7;border-color:#dce9df;align-items:stretch}
+.section-features .feature-showcase-card.feature-accent{background:#123f34;border-color:#123f34}
+.feature-card-copy{display:grid;grid-template-columns:54px 1fr;column-gap:15px;align-content:start;align-items:start}
+.feature-card-copy .feature-icon{grid-row:span 3;margin:0}
+.feature-card-copy .feature-label{grid-column:2;font-size:10px;line-height:1.5;letter-spacing:.1em;font-weight:850;color:#426d59;margin:1px 0 7px}
+.feature-card-copy h3{font-size:22px;line-height:1.25;grid-column:2;margin:0 0 9px}
+.feature-card-copy p{grid-column:2;margin:0;font-size:15px;line-height:1.7;color:#3b594c}
+.feature-accent .feature-card-copy .feature-label{color:#c9f2c4}
+.feature-accent .feature-card-copy p{color:#f0faf2!important}
+.feature-preview{width:100%;background:#edf3ed;border:1px dashed #9cb9a8;border-radius:16px;overflow:hidden;min-height:223px;color:#295746}
+.feature-accent .feature-preview{background:#e7f3e8;border-color:#bad8c0;color:#174534}
+.preview-window{height:37px;padding:0 13px;border-bottom:1px solid #c9d9cc;display:flex;align-items:center;gap:12px;background:#fafdfa;color:#3b6554;font-size:11px;font-weight:750}
+.preview-dots{display:flex;gap:4px}.preview-dots i{height:6px;width:6px;background:#9eb9aa;border-radius:50%}
+.preview-placeholder{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;text-align:center;min-height:185px;padding:20px 14px}
+.preview-placeholder-icon{font-size:30px;line-height:1;color:#528b70}
+.preview-placeholder strong{font-size:14px;color:#245a46}
+.preview-placeholder>span:last-child{font-size:12px;line-height:1.5;color:#4d695b;max-width:270px}
+.feature-preview.has-screenshot{border-style:solid;min-height:0}
+.feature-preview.has-screenshot img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:contain;background:#fff}
