@@ -59,7 +59,7 @@
 </section>
 <section class="section about" id="naiara" aria-labelledby="about-title">
   <div class="container about-grid">
-    <div class="about-photo"><img src="assets/naiara.svg" loading="lazy" width="390" height="546" alt="Fotografia de Naiara Corá"><span>Planejamento para a vida real.</span></div>
+    <div class="about-photo"><img src="assets/naiara-retrato-original.jpg" loading="lazy" decoding="async" width="1365" height="2048" alt="Fotografia de Naiara Corá"><span>Controle financeiro para a vida real.</span></div>
     <div class="about-copy"><span class="eyebrow">Por trás da Central Financeira</span>
       <h2 id="about-title">Oi, eu sou a <em>Naiara Corá.</em></h2>
       <p>Acredito que organizar as finanças não precisa ser complicado. O primeiro passo é entender o que acontece com o dinheiro e ter mais clareza para decidir.</p>
