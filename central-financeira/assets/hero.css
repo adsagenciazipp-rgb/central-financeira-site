@@ -1,0 +1,39 @@
+.hero{background:radial-gradient(ellipse at 75% 12%,#2a5443 0,transparent 36%),radial-gradient(ellipse at -5% 85%,#1d4f3c 0,transparent 33%),#0d2623;overflow:hidden;min-height:700px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,.97fr) minmax(0,1.03fr);gap:22px;align-items:center;min-height:700px}
+.hero-copy{position:relative;z-index:4;color:#fff;padding-block:70px 80px}
+.hero-kicker{display:inline-flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:.15em;font-size:11px;font-weight:850;color:#c6ead6;margin-bottom:25px}
+.signal{height:7px;width:7px;border-radius:50%;background:#aef899;box-shadow:0 0 0 5px rgba(174,248,153,.15)}
+.hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(45px,4.55vw,72px);line-height:1.09;font-weight:500;letter-spacing:-.055em;margin:0 0 23px;max-width:640px}
+.hero h1 em{font-weight:500;font-style:normal;color:#b9f69b}
+.hero-lead{color:#c2d4cd;line-height:1.82;font-size:16px;max-width:505px;margin:0 0 30px}
+.hero-actions{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.text-link{font-weight:750;font-size:13px;color:#e0f8e7;border-bottom:1px solid #a1c2ad;padding:8px 0}
+.hero-trust{display:flex;gap:15px 24px;flex-wrap:wrap;margin-top:34px;color:#b8d1c6;font-size:11px}.hero-trust span{white-space:nowrap}
+.hero-stage{height:590px;min-width:0;position:relative;isolation:isolate;align-self:end}
+.stage-circle{position:absolute;border:1px solid rgba(200,239,207,.14);border-radius:50%;z-index:-1}
+.stage-circle.one{width:520px;height:520px;top:40px;left:65px}.stage-circle.two{width:390px;height:390px;top:120px;left:124px}
+.person-card{position:absolute;right:3%;top:32px;width:164px;height:216px;z-index:3;overflow:hidden;border:4px solid rgba(255,255,255,.13);background:#1c3a32;border-radius:21px;box-shadow:0 18px 38px rgba(0,0,0,.28);transform:rotate(7deg)}
+.person-card img{width:100%;height:100%;object-fit:cover}.person-signature{position:absolute;bottom:0;left:0;right:0;padding:18px 6px 8px;background:linear-gradient(transparent,#0b1e1b);color:#fff;display:flex;flex-direction:column;align-items:center;font-size:11px;line-height:1.15}.person-signature b{font-size:13px}
+.device-laptop{position:absolute;width:min(95%,565px);left:-14px;top:191px;transform:rotate(-3deg);filter:drop-shadow(0 28px 27px rgba(0,0,0,.4));z-index:1}
+.laptop-frame{position:relative;border:10px solid #202724;border-bottom:13px solid #202724;border-radius:14px 14px 5px 5px;background:#e9f2ed;aspect-ratio:1.58;overflow:hidden}
+.laptop-camera{position:absolute;top:-7px;left:50%;width:4px;height:4px;border-radius:50%;background:#5a6a63;z-index:1}
+.app-screen{display:grid;grid-template-columns:23% 77%;height:100%;font-size:10px}
+.app-side{display:flex;flex-direction:column;gap:11px;background:#064b44;color:#b5d7c7;padding:19px 10px}.app-side b{color:#a5f1db;font-size:28px;line-height:1}.app-side span:nth-child(2){background:#256f61;color:#fff;border-radius:4px;padding:6px}
+.app-main{padding:17px 21px;background:#f2f8f4;color:#234e43;overflow:hidden}.app-main>small{font-size:8px;letter-spacing:.16em;color:#5f8b77}.app-main h3{margin:3px 0 15px;font-size:16px;letter-spacing:-.04em}
+.app-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.app-stats>div{border:1px solid #e0ebe3;border-radius:7px;padding:9px;background:#fff}.app-stats small{display:block;font-size:7px;color:#81958a}.app-stats b{font-size:13px;color:#1b5645}
+.app-chart{background:#fff;border:1px solid #e2ebe5;border-radius:8px;padding:12px;margin-top:12px;height:104px}.app-chart>span,.app-list>span{font-size:8px;color:#446d5d;font-weight:800}
+.app-bars{height:67px;display:flex;align-items:flex-end;gap:10px;padding:5px 4px}.app-bars i{flex:1;background:#71bba1;border-radius:3px 3px 0 0}
+.app-bars i:nth-child(1){height:42%}.app-bars i:nth-child(2){height:60%}.app-bars i:nth-child(3){height:48%}.app-bars i:nth-child(4){height:82%}.app-bars i:nth-child(5){height:72%}.app-bars i:nth-child(6){height:94%}.app-bars i:nth-child(7){height:63%}.app-bars i:nth-child(8){height:100%;background:#0e6754}
+.app-list{margin-top:11px;background:#fff;border:1px solid #e2ebe5;border-radius:7px;padding:8px 12px}.app-list div{height:4px;background:#ebf1eb;border-radius:3px;margin-top:7px}.app-list div:nth-of-type(2){width:83%}.app-list div:nth-of-type(3){width:65%}
+.laptop-base{position:relative;width:110%;height:15px;left:-5%;background:linear-gradient(#c7ccca,#5d6763);border-radius:2px 2px 50% 50%;box-shadow:0 7px 0 #1b2421}
+.device-phone{position:absolute;right:0;bottom:46px;width:164px;height:329px;border:8px solid #222927;border-radius:31px;background:#f6f9f7;z-index:5;box-shadow:0 19px 40px rgba(0,0,0,.38);transform:rotate(7deg);padding:23px 9px 10px;color:#1b5546;font-size:8px}
+.phone-notch{position:absolute;top:6px;left:50%;transform:translateX(-50%);height:10px;width:52px;background:#222927;border-radius:10px}
+.phone-top span{display:block;font-weight:850;font-size:10px}.phone-top small{display:block;margin-top:8px;color:#668b7a;font-size:8px}
+.phone-balance{background:#0c6757;color:#fff;border-radius:11px;margin-top:10px;padding:12px}.phone-balance small{display:block;color:#b4e6d0}.phone-balance strong{display:block;font-size:22px;line-height:1.2;margin:6px 0}.phone-balance span{color:#d2f2e4}
+.phone-buttons{display:flex;gap:7px;margin:12px 0}.phone-buttons i{height:24px;background:#deeee4;border-radius:7px;flex:1}
+.phone-summary{background:#fff;border:1px solid #e1eae3;border-radius:9px;padding:11px}.phone-summary b{display:block;font-size:9px}.phone-summary i{display:block;height:6px;width:100%;margin-top:9px;border-radius:9px;background:#d5e5db}.phone-summary i:nth-of-type(2){width:72%}.phone-summary i:nth-of-type(3){width:82%;background:#a3d7b8}
+.phone-bottom{display:flex;justify-content:space-between;border-top:1px solid #dfe9e1;margin-top:17px;padding-top:10px;color:#709283;font-size:8px}
+.float-note{position:absolute;left:10px;bottom:54px;z-index:6;display:grid;grid-template-columns:40px auto;gap:1px 10px;background:#f9fff5;color:#184637;border:1px solid #e0f0d6;border-radius:14px;padding:12px 15px;box-shadow:var(--shadow)}
+.float-note>span{grid-row:span 2;background:#c8f3bc;border-radius:10px;padding:7px;text-align:center;font-size:20px}.float-note strong{font-size:12px}.float-note small{font-size:10px;color:#648174}
+.screen-disclaimer{position:absolute;bottom:5px;right:12px;color:#9fbab0;font-size:10px}
+.benefit-ribbon{background:#d9eedd;border-bottom:1px solid #c8e7d1}.ribbon-items{display:flex;gap:15px;justify-content:space-between;align-items:center;min-height:76px;color:#255b49;font-weight:800;font-size:12px}
