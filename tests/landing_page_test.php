@@ -17,8 +17,8 @@ foreach(['<h1','id="beneficios"','id="depoimentos"','id="planos"','id="faq"',
          'Perguntas frequentes'] as $piece){
   expect_landing(stripos($html,$piece)!==false,'estrutura exigida: '.$piece);
 }
-expect_landing(substr_count($html,'https://central.naiaracora.com.br/loja.php#planos')>=2,
- 'ambos os planos devem levar à loja já existente da Central, sem ativar checkout');
+expect_landing(str_contains($html,'https://central.naiaracora.com.br/loja.php?perfil=familiar#planos') && str_contains($html,'https://central.naiaracora.com.br/loja.php?perfil=empresarial#planos'),
+ 'cada plano deve enviar diretamente à contratação comercial correspondente');
 expect_landing(!str_contains($html,'checkout.php') && !str_contains($html,'preapproval'),
  'não abrir pagamento Sandbox ou ativar pagamento no site público');
 expect_landing(stripos($html,'depoimentos sobre nossos materiais anteriores')!==false,

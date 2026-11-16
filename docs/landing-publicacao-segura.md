@@ -6,8 +6,10 @@ A página raiz `index.php` **não foi alterada**; há também backup exato em
 `backups/em-breve-2026-11-16.php`.
 
 A nova página é apenas visual; não conecta ao MySQL, não grava leads, não
-aciona pagamentos e não possui tokens. Os dois CTAs comerciais vão para
-`https://central.naiaracora.com.br/loja.php#planos`, que controla o
+aciona pagamentos e não possui tokens. Os CTAs dos dois planos apontam diretamente à respectiva seleção comercial:
+`https://central.naiaracora.com.br/loja.php?perfil=familiar#planos` e
+`https://central.naiaracora.com.br/loja.php?perfil=empresarial#planos`.
+A Central controla o
 catálogo real, a vinculação de titular e a autorização de cobrança.
 
 ## Destino pretendido

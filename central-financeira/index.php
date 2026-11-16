@@ -6,7 +6,8 @@ header('X-Content-Type-Options: nosniff');
 header('Referrer-Policy: strict-origin-when-cross-origin');
 header('X-Frame-Options: SAMEORIGIN');
 header("Content-Security-Policy: default-src 'none'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'; frame-ancestors 'self'");
-$store='https://central.naiaracora.com.br/loja.php#planos';
+$storeFamiliar='https://central.naiaracora.com.br/loja.php?perfil=familiar#planos';
+$storeCompleto='https://central.naiaracora.com.br/loja.php?perfil=empresarial#planos';
 $portal='https://financeiro.naiaracora.com.br/index.php?page=login';
 function lp_escape(string $value):string {return htmlspecialchars($value,ENT_QUOTES|ENT_SUBSTITUTE,'UTF-8');}
 ?><!doctype html>
@@ -19,7 +20,7 @@ function lp_escape(string $value):string {return htmlspecialchars($value,ENT_QUO
 <meta property="og:description" content="Veja para onde seu dinheiro está indo, acompanhe as contas e organize as finanças da família e do pequeno negócio.">
 <meta property="og:type" content="website"><meta property="og:locale" content="pt_BR">
 <link rel="canonical" href="https://naiaracora.com.br/central-financeira/">
-<link rel="stylesheet" href="/central-financeira/assets/landing.css?v=3">
+<link rel="stylesheet" href="/central-financeira/assets/landing.css?v=4">
 <title>Central Financeira — Gestão Familiar e Empresarial | Naiara Corá</title>
 </head>
 <body>
