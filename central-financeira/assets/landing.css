@@ -26,3 +26,8 @@ h2 em{font-weight:500;font-style:normal;color:#258f6e}
 .section p{color:var(--text)}
 .section-title-center{text-align:center;max-width:790px;margin:0 auto 52px}.section-title-center p{font-size:16px;line-height:1.7}
 .underline-link{display:inline-flex;gap:13px;font-weight:850;color:#197457;border-bottom:2px solid #9fddbd;padding:5px 0;margin-top:17px;font-size:14px}
+
+/* V2: microinterações acessíveis, sem JavaScript e sem animações pesadas */
+@keyframes cf-reveal{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion:no-preference){.hero-copy{animation:cf-reveal .75s both}.hero-stage{animation:cf-reveal .85s .12s both}.feature-card,.testimonial-card,.pricing-card,.bonus-tile{transition:transform .22s ease,box-shadow .22s ease}.feature-card:hover,.testimonial-card:hover,.pricing-card:hover,.bonus-tile:hover{transform:translateY(-4px);box-shadow:0 16px 35px rgba(13,42,32,.11)}}
+@media (prefers-reduced-motion:reduce){.hero-copy,.hero-stage{animation:none!important}.feature-card,.testimonial-card,.pricing-card,.bonus-tile{transition:none!important}}

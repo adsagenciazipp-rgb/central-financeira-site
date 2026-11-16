@@ -1,29 +1,29 @@
 <section class="section testimonials" id="depoimentos" aria-labelledby="testimonials-title">
   <div class="container"><div class="section-title-center"><span class="eyebrow">Histórias de quem já começou</span>
-    <h2 id="testimonials-title">Organização também traz <em>tranquilidade.</em></h2>
+    <h2 id="testimonials-title">Quem passou a acompanhar os gastos <em>começou a entender melhor seu dinheiro.</em></h2>
     <p>Depoimentos sobre nossos materiais anteriores de gestão financeira, como planilhas e aulas, que inspiraram a evolução para a Central Financeira.</p>
   </div>
   <div class="testimonial-grid">
     <figure class="testimonial-card"><span class="quote-symbol" aria-hidden="true">“</span>
       <blockquote>Eu adorei a planilha, super autoexplicativa e nos permite ter uma visão geral dos gastos anuais, facilitando o planejamento.</blockquote>
-      <figcaption><span class="avatar">L</span><span><strong>Depoimento recebido</strong><small>Material anterior de gestão financeira</small></span></figcaption>
+      <figcaption><span class="avatar">01</span><span><strong>Cliente de material anterior</strong><small>Material anterior de gestão financeira</small></span></figcaption>
     </figure>
     <figure class="testimonial-card"><span class="quote-symbol" aria-hidden="true">“</span>
       <blockquote>Estou usando para fazer o meu controle pessoal e está sendo ótimo. Inclusive mostrei para os meus pais.</blockquote>
-      <figcaption><span class="avatar">O</span><span><strong>Depoimento recebido</strong><small>Material anterior de gestão financeira</small></span></figcaption>
+      <figcaption><span class="avatar">02</span><span><strong>Depoimento recebido</strong><small>Material anterior de gestão financeira</small></span></figcaption>
     </figure>
     <figure class="testimonial-card"><span class="quote-symbol" aria-hidden="true">“</span>
       <blockquote>Consegui controlar minhas contas e entender onde estava indo o meu dinheiro. Agora consigo me organizar financeiramente para os próximos meses.</blockquote>
-      <figcaption><span class="avatar">T</span><span><strong>Depoimento recebido</strong><small>Material anterior de gestão financeira</small></span></figcaption>
+      <figcaption><span class="avatar">03</span><span><strong>Depoimento recebido</strong><small>Material anterior de gestão financeira</small></span></figcaption>
     </figure>
   </div>
-  <p class="testimonial-context">Estes são depoimentos sobre nossos materiais anteriores, não avaliações do novo sistema de assinatura.</p>
+  <p class="testimonial-context">Relatos reais recebidos sobre planilhas e materiais anteriores. Nomes não divulgados por falta de autorização; não são avaliações da plataforma atual.</p>
   </div>
 </section>
 <section class="section pricing" id="planos" aria-labelledby="pricing-title">
   <div class="container"><div class="section-title-center"><span class="eyebrow">Escolha como começar</span>
-    <h2 id="pricing-title">Seu controle financeiro começa <em>aqui.</em></h2>
-    <p>Dois planos mensais. Escolha o que combina com sua rotina e avance no seu ritmo.</p>
+    <h2 id="pricing-title">Comece a organizar suas contas <em>a partir de R$ 19,90/mês.</em></h2>
+    <p>Você não precisa de uma ferramenta cara para dar o primeiro passo. Escolha o plano para sua família ou para sua família e empresa.</p>
   </div>
   <div class="pricing-grid">
     <article class="pricing-card" aria-label="Plano Gestão Familiar por R$ 19,90 ao mês">
@@ -71,8 +71,8 @@
 </section>
 <section class="final-cta" aria-labelledby="final-title">
   <div class="container final-inner"><span class="eyebrow">A próxima decisão pode ser mais simples</span>
-    <h2 id="final-title">Menos dúvidas sobre o dinheiro. <em>Mais planos para o futuro.</em></h2>
-    <p>Organize sua família, seu negócio e o que vem pela frente.</p>
+    <h2 id="final-title">Não espere mais um mês apertado para <em>começar a organizar suas contas.</em></h2>
+    <p>Tenha uma visão mais clara do seu dinheiro. Comece pelo plano que cabe na sua rotina.</p>
     <a class="btn btn-lime" href="#planos">Escolher meu plano ↗</a>
   </div>
 </section>

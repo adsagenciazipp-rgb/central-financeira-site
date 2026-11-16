@@ -42,3 +42,6 @@
  .pricing-card h3{font-size:27px}.price strong{font-size:55px}
 }
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.btn,.feature-card{transition:none}}
+
+/* V2: dispositivos ocupam o hero sem cartão de retrato */
+@media(max-width:760px){.hero-stage{overflow:visible}.person-card{display:none!important}}

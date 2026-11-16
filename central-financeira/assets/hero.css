@@ -37,3 +37,6 @@
 .float-note>span{grid-row:span 2;background:#c8f3bc;border-radius:10px;padding:7px;text-align:center;font-size:20px}.float-note strong{font-size:12px}.float-note small{font-size:10px;color:#648174}
 .screen-disclaimer{position:absolute;bottom:5px;right:12px;color:#9fbab0;font-size:10px}
 .benefit-ribbon{background:#d9eedd;border-bottom:1px solid #c8e7d1}.ribbon-items{display:flex;gap:15px;justify-content:space-between;align-items:center;min-height:76px;color:#255b49;font-weight:800;font-size:12px}
+
+/* V2: hero visual limpo, sem retrato pequeno de baixa resolução */
+.person-card,.person-signature{display:none!important}

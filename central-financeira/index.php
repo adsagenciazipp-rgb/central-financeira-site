@@ -15,11 +15,11 @@ function lp_escape(string $value):string {return htmlspecialchars($value,ENT_QUO
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#103c33">
 <meta name="description" content="Central Financeira: gestão familiar e empresarial em uma plataforma simples. Assinaturas mensais a partir de R$ 19,90, com curso e videoaulas de gestão financeira.">
-<meta property="og:title" content="Central Financeira | Organize hoje, viva com mais clareza">
-<meta property="og:description" content="Controle suas finanças pessoais e empresariais em um só lugar. Conheça os dois planos.">
+<meta property="og:title" content="Central Financeira | As contas não fecham? Organize o seu dinheiro">
+<meta property="og:description" content="Veja para onde seu dinheiro está indo, acompanhe as contas e organize as finanças da família e do pequeno negócio.">
 <meta property="og:type" content="website"><meta property="og:locale" content="pt_BR">
 <link rel="canonical" href="https://naiaracora.com.br/central-financeira/">
-<link rel="stylesheet" href="/central-financeira/assets/landing.css?v=1">
+<link rel="stylesheet" href="/central-financeira/assets/landing.css?v=2">
 <title>Central Financeira — Gestão Familiar e Empresarial | Naiara Corá</title>
 </head>
 <body>
