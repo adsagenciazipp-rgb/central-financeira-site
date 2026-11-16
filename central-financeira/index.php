@@ -19,7 +19,7 @@ function lp_escape(string $value):string {return htmlspecialchars($value,ENT_QUO
 <meta property="og:description" content="Veja para onde seu dinheiro está indo, acompanhe as contas e organize as finanças da família e do pequeno negócio.">
 <meta property="og:type" content="website"><meta property="og:locale" content="pt_BR">
 <link rel="canonical" href="https://naiaracora.com.br/central-financeira/">
-<link rel="stylesheet" href="/central-financeira/assets/landing.css?v=2">
+<link rel="stylesheet" href="/central-financeira/assets/landing.css?v=3">
 <title>Central Financeira — Gestão Familiar e Empresarial | Naiara Corá</title>
 </head>
 <body>
