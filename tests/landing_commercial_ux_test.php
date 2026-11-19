@@ -10,7 +10,7 @@ function site_ux_check(bool $good,string $label):void {
 site_ux_check(!str_contains($html,'class="site-header"'),'sem menu superior');
 site_ux_check(substr_count($html,'Quero organizar minhas contas')>=5,'CTA repetido após seções');
 site_ux_check(substr_count($html,'class="cta-repeat"')===4,'CTA entre cada duas seções');
-site_ux_check(substr_count($html,'class="preview-image-link"')===6,'6 telas reais clicáveis');
+site_ux_check(substr_count($html,'class="preview-image-link"')===6,'6 telas reais estáticas');
 site_ux_check(substr_count($html,'class="feature-preview has-screenshot"')===6,'6 telas completas');
 site_ux_check(!str_contains($html,'class="preview-screenshot"')&&!str_contains($html,'class="preview-window"'),
  'não usar minisprite de baixa resolução nem barra falsa sobre o print');
@@ -34,8 +34,8 @@ for($i=1;$i<=6;$i++){
  site_ux_check(hash_file('sha256',$path)===$hashes[$i-1],
    'imagem original do screenshot '.$i.' sem alteração de pixels');
  $url='/central-financeira/assets/screens/screen-'.$i.'.webp';
- site_ux_check(substr_count($html,'href="'.$url.'"')===1 &&
-   substr_count($html,'src="'.$url.'"')===1,'abrir e mostrar o mesmo screenshot original '.$i);
+ site_ux_check(substr_count($html,'href="'.$url.'"')===0 &&
+   substr_count($html,'src="'.$url.'"')===1,'exibir screenshot original sem ampliar '.$i);
 }
 $css=file_get_contents($root.'/central-financeira/assets/landing.css');
 site_ux_check(str_contains($css,'.feature-showcase{grid-template-columns:repeat(2,minmax(0,1fr))'),
@@ -51,4 +51,4 @@ site_ux_check(!str_contains($css,'background-size:200% 300%') &&
 site_ux_check(str_contains($css,'prefers-reduced-motion'),'animação acessível');
 $motion=file_get_contents($root.'/central-financeira/assets/landing-motion.js');
 site_ux_check(str_contains($motion,'IntersectionObserver'),'efeitos leves ao navegar');
-echo "OK: landing com seis capturas nítidas na resolução original e ampliação por clique.\n";
+echo "OK: landing com seis capturas nítidas na resolução original, sem ampliação por clique.\n";
