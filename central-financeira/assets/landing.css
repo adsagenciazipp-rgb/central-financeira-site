@@ -55,7 +55,7 @@ h2 em{font-weight:500;font-style:normal;color:#258f6e}
 
 
 /* Vitrines compactas em duas colunas, sem miniaturas borradas ou recortes. */
-.section-features .feature-showcase{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.section-features .feature-showcase{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .section-features .feature-showcase-card{
   display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(112px,auto) auto;gap:14px;
   padding:clamp(16px,1.7vw,22px);background:#f8fbf8;border-color:#d7e8dc;
@@ -82,6 +82,7 @@ h2 em{font-weight:500;font-style:normal;color:#258f6e}
 .section-features .feature-preview .preview-caption{display:flex;justify-content:space-between;gap:12px;align-items:center;
  padding:10px 15px;background:#f3f8f4;color:#416457;font-size:11px;font-weight:750;border-top:1px solid #e1ece4}
 .section-features .feature-preview .preview-caption span:last-child{color:#087f64;white-space:nowrap}
+@media(min-width:761px) and (max-width:1050px){.section-features .feature-showcase{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){
  .section-features .feature-showcase{grid-template-columns:minmax(0,1fr);gap:16px}
  .section-features .feature-showcase-card{grid-template-rows:auto auto;padding:16px;gap:12px}
