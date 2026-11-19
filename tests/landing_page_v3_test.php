@@ -6,7 +6,7 @@ $slots=['receitas-despesas','previsao','cartoes-caixa','metas-relatorios','famil
 foreach($slots as $slot){
   if(substr_count($html,'data-screenshot-slot="'.$slot.'"') !== 1) throw new RuntimeException('V3: slot '.$slot.' ausente ou duplicado');
 }
-if(substr_count($html,'class="feature-preview"') !== 6) throw new RuntimeException('V3: seis espaços de imagem esperados');
+if(substr_count($html,'class="feature-preview has-screenshot"') !== 6) throw new RuntimeException('V3: seis capturas reais de resolução original esperadas');
 if(!str_contains($html,'naiara-retrato-original.jpg') || str_contains($html,'src="assets/naiara.svg"')) throw new RuntimeException('V3: foto antiga não substituída');
 $photo=(string)file_get_contents($root.'/central-financeira/assets/naiara-retrato-original.jpg');
 if(strlen($photo)<15000 || !str_starts_with($photo,hex2bin('ffd8')) || !str_ends_with($photo,hex2bin('ffd9'))) throw new RuntimeException('V3: foto inválida');
