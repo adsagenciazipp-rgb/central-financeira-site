@@ -62,6 +62,7 @@
     </article>
   </div></div>
 </section>
+<?php $ctaPhrase='Sua organização financeira pode começar hoje.';require __DIR__.'/cta-repeat.php'; ?>
 <section class="section walkthrough" id="como-funciona" aria-labelledby="walkthrough-title">
   <div class="container walkthrough-grid"><div>
     <span class="eyebrow">Na prática</span><h2 id="walkthrough-title">Olhe para suas finanças de um jeito <em>mais simples.</em></h2>
@@ -87,6 +88,7 @@
     <p><span>↗</span> Quem precisa se preparar para parcelas, cartões e boletos.</p>
   </div></div>
 </section>
+<?php $ctaPhrase='Menos surpresa no fim do mês. Mais controle todos os dias.';require __DIR__.'/cta-repeat.php'; ?>
 <section class="section bonus" aria-labelledby="bonus-title">
   <div class="container bonus-shell"><div><span class="eyebrow">Mais que um sistema</span>
     <h2 id="bonus-title">A Central Financeira organiza suas contas. <em>Os bônus ensinam você a cuidar melhor delas.</em></h2>
