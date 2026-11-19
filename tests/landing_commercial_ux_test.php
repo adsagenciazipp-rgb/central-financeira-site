@@ -38,8 +38,11 @@ for($i=1;$i<=6;$i++){
    substr_count($html,'src="'.$url.'"')===1,'abrir e mostrar o mesmo screenshot original '.$i);
 }
 $css=file_get_contents($root.'/central-financeira/assets/landing.css');
-site_ux_check(str_contains($css,'.feature-showcase{grid-template-columns:minmax(0,1fr)'),
- 'prints em largura total');
+site_ux_check(str_contains($css,'.feature-showcase{grid-template-columns:repeat(2,minmax(0,1fr))'),
+ 'prints em duas colunas no computador');
+site_ux_check(str_contains($css,'@media(max-width:760px)') &&
+ str_contains($css,'.feature-showcase{grid-template-columns:minmax(0,1fr)'),
+ 'imagens em coluna única no celular');
 site_ux_check(str_contains($css,'height:auto!important') &&
  str_contains($css,'aspect-ratio:auto!important') &&
  str_contains($css,'filter:none!important'),'prints sem corte, distorção ou desfoque');
