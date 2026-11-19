@@ -20,6 +20,7 @@
   <p class="testimonial-context">Relatos reais recebidos sobre planilhas e materiais anteriores. Nomes não divulgados por falta de autorização; não são avaliações da plataforma atual.</p>
   </div>
 </section>
+<?php $ctaPhrase='Veja os planos e escolha o que faz sentido para você.';require __DIR__.'/cta-repeat.php'; ?>
 <section class="section pricing" id="planos" aria-labelledby="pricing-title">
   <div class="container"><div class="section-title-center"><span class="eyebrow">Escolha como começar</span>
     <h2 id="pricing-title">Comece a organizar suas contas <em>a partir de R$ 19,90/mês.</em></h2>
@@ -57,6 +58,7 @@
     </div>
   </div>
 </section>
+<?php $ctaPhrase='Comece com suas contas e evolua no seu ritmo.';require __DIR__.'/cta-repeat.php'; ?>
 <section class="section about" id="naiara" aria-labelledby="about-title">
   <div class="container about-grid">
     <div class="about-photo"><img src="assets/naiara-retrato-original.jpg" loading="lazy" decoding="async" width="1365" height="2048" alt="Fotografia de Naiara Corá"><span>Controle financeiro para a vida real.</span></div>
