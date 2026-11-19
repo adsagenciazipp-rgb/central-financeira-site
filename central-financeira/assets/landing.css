@@ -51,7 +51,7 @@ h2 em{font-weight:500;font-style:normal;color:#258f6e}
 .reveal-pending{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
 .reveal-pending.is-visible{opacity:1;transform:none}
 .feature-showcase .feature-preview{overflow:hidden}
-.feature-preview .preview-screenshot{min-height:210px;width:100%;background-repeat:no-repeat;background-color:#e9f1ec;background-size:200% 300%;border-radius:10px}
+.feature-preview .preview-screenshot{display:block;aspect-ratio:33/16;width:100%;min-height:0;background-image:url('/central-financeira/assets/portal-screens.php');background-repeat:no-repeat;background-color:#e9f1ec;background-size:200% 300%;border-radius:10px}
 .feature-preview[data-screenshot-slot="receitas-despesas"] .preview-screenshot{background-position:0 0}
 .feature-preview[data-screenshot-slot="previsao"] .preview-screenshot{background-position:100% 0}
 .feature-preview[data-screenshot-slot="cartoes-caixa"] .preview-screenshot{background-position:0 50%}
@@ -59,5 +59,5 @@ h2 em{font-weight:500;font-style:normal;color:#258f6e}
 .feature-preview[data-screenshot-slot="familia"] .preview-screenshot{background-position:0 100%}
 .feature-preview[data-screenshot-slot="empresarial"] .preview-screenshot{background-position:100% 100%}
 .feature-preview .preview-window{position:relative;z-index:2}
-@media(max-width:760px){.cta-repeat{padding:14px 0}.cta-repeat-inner{flex-direction:column;align-items:stretch;padding:22px}.cta-repeat-inner .btn{white-space:normal}.feature-preview .preview-screenshot{min-height:195px}}
+@media(max-width:760px){.cta-repeat{padding:14px 0}.cta-repeat-inner{flex-direction:column;align-items:stretch;padding:22px}.cta-repeat-inner .btn{white-space:normal}.feature-preview .preview-screenshot{min-height:0}}
 @media(prefers-reduced-motion:reduce){.reveal-pending{opacity:1;transform:none;transition:none}}
