@@ -20,48 +20,49 @@
   <div class="feature-grid feature-showcase">
     <article class="feature-card feature-showcase-card feature-accent">
       <div class="feature-card-copy"><span class="feature-icon" aria-hidden="true">↗</span><small class="feature-label">01 / CONTROLE</small><h3>Receitas e despesas</h3><p>Registre entradas, saídas e contas pendentes para saber para onde o dinheiro está indo.</p></div>
-      <div class="feature-preview" data-screenshot-slot="receitas-despesas" aria-label="Espaço reservado para imagem real do sistema: Receitas e despesas">
+      <div class="feature-preview" data-screenshot-slot="receitas-despesas" aria-label="Captura da interface do sistema: Receitas e despesas">
         <div class="preview-window" aria-hidden="true"><span class="preview-dots"><i></i><i></i><i></i></span><span>Central Financeira</span></div>
-        <div class="preview-placeholder"><span class="preview-placeholder-icon" aria-hidden="true">▧</span><strong>Em breve: tela real do sistema</strong><span>Espaço preparado para o print de receitas e despesas</span></div>
+        <div class="preview-screenshot" role="img" aria-label="Captura real da interface do sistema financeiro"></div>
       </div>
     </article>
     <article class="feature-card feature-showcase-card">
       <div class="feature-card-copy"><span class="feature-icon" aria-hidden="true">◷</span><small class="feature-label">02 / PLANEJAMENTO</small><h3>Previsão dos próximos meses</h3><p>Antecipe vencimentos, parcelas e compromissos futuros antes de apertarem o orçamento.</p></div>
-      <div class="feature-preview" data-screenshot-slot="previsao" aria-label="Espaço reservado para imagem real do sistema: Previsão dos próximos meses">
+      <div class="feature-preview" data-screenshot-slot="previsao" aria-label="Captura da interface do sistema: Previsão dos próximos meses">
         <div class="preview-window" aria-hidden="true"><span class="preview-dots"><i></i><i></i><i></i></span><span>Central Financeira</span></div>
-        <div class="preview-placeholder"><span class="preview-placeholder-icon" aria-hidden="true">▧</span><strong>Em breve: tela real do sistema</strong><span>Espaço preparado para o print de previsão dos próximos meses</span></div>
+        <div class="preview-screenshot" role="img" aria-label="Captura real da interface do sistema financeiro"></div>
       </div>
     </article>
     <article class="feature-card feature-showcase-card">
       <div class="feature-card-copy"><span class="feature-icon" aria-hidden="true">▤</span><small class="feature-label">03 / ORGANIZAÇÃO</small><h3>Cartões, contas e caixa</h3><p>Consulte cartões de crédito, contas bancárias e o saldo disponível em um só lugar.</p></div>
-      <div class="feature-preview" data-screenshot-slot="cartoes-caixa" aria-label="Espaço reservado para imagem real do sistema: Cartões, contas e caixa">
+      <div class="feature-preview" data-screenshot-slot="cartoes-caixa" aria-label="Captura da interface do sistema: Cartões, contas e caixa">
         <div class="preview-window" aria-hidden="true"><span class="preview-dots"><i></i><i></i><i></i></span><span>Central Financeira</span></div>
-        <div class="preview-placeholder"><span class="preview-placeholder-icon" aria-hidden="true">▧</span><strong>Em breve: tela real do sistema</strong><span>Espaço preparado para o print de cartões, contas e caixa</span></div>
+        <div class="preview-screenshot" role="img" aria-label="Captura real da interface do sistema financeiro"></div>
       </div>
     </article>
     <article class="feature-card feature-showcase-card">
       <div class="feature-card-copy"><span class="feature-icon" aria-hidden="true">◎</span><small class="feature-label">04 / VISÃO</small><h3>Metas e relatórios</h3><p>Veja seus gastos por categoria e acompanhe as metas e os resultados mês a mês.</p></div>
-      <div class="feature-preview" data-screenshot-slot="metas-relatorios" aria-label="Espaço reservado para imagem real do sistema: Metas e relatórios">
+      <div class="feature-preview" data-screenshot-slot="metas-relatorios" aria-label="Captura da interface do sistema: Metas e relatórios">
         <div class="preview-window" aria-hidden="true"><span class="preview-dots"><i></i><i></i><i></i></span><span>Central Financeira</span></div>
-        <div class="preview-placeholder"><span class="preview-placeholder-icon" aria-hidden="true">▧</span><strong>Em breve: tela real do sistema</strong><span>Espaço preparado para o print de metas e relatórios</span></div>
+        <div class="preview-screenshot" role="img" aria-label="Captura real da interface do sistema financeiro"></div>
       </div>
     </article>
     <article class="feature-card feature-showcase-card">
       <div class="feature-card-copy"><span class="feature-icon" aria-hidden="true">♙</span><small class="feature-label">05 / FAMÍLIA</small><h3>Organização familiar</h3><p>Separe os gastos da casa e acompanhe as movimentações de cada integrante.</p></div>
-      <div class="feature-preview" data-screenshot-slot="familia" aria-label="Espaço reservado para imagem real do sistema: Organização familiar">
+      <div class="feature-preview" data-screenshot-slot="familia" aria-label="Captura da interface do sistema: Organização familiar">
         <div class="preview-window" aria-hidden="true"><span class="preview-dots"><i></i><i></i><i></i></span><span>Central Financeira</span></div>
-        <div class="preview-placeholder"><span class="preview-placeholder-icon" aria-hidden="true">▧</span><strong>Em breve: tela real do sistema</strong><span>Espaço preparado para o print de organização familiar</span></div>
+        <div class="preview-screenshot" role="img" aria-label="Captura real da interface do sistema financeiro"></div>
       </div>
     </article>
     <article class="feature-card feature-showcase-card">
       <div class="feature-card-copy"><span class="feature-icon" aria-hidden="true">▦</span><small class="feature-label">06 / NEGÓCIO</small><h3>Gestão empresarial</h3><p>No plano completo, controle despesas, recebimentos e a previsão financeira do seu negócio.</p></div>
-      <div class="feature-preview" data-screenshot-slot="empresarial" aria-label="Espaço reservado para imagem real do sistema: Gestão empresarial">
+      <div class="feature-preview" data-screenshot-slot="empresarial" aria-label="Captura da interface do sistema: Gestão empresarial">
         <div class="preview-window" aria-hidden="true"><span class="preview-dots"><i></i><i></i><i></i></span><span>Central Financeira</span></div>
-        <div class="preview-placeholder"><span class="preview-placeholder-icon" aria-hidden="true">▧</span><strong>Em breve: tela real do sistema</strong><span>Espaço preparado para o print de gestão empresarial</span></div>
+        <div class="preview-screenshot" role="img" aria-label="Captura real da interface do sistema financeiro"></div>
       </div>
     </article>
   </div></div>
 </section>
+<?php $ctaPhrase='Sua organização financeira pode começar hoje.';require __DIR__.'/cta-repeat.php'; ?>
 <section class="section walkthrough" id="como-funciona" aria-labelledby="walkthrough-title">
   <div class="container walkthrough-grid"><div>
     <span class="eyebrow">Na prática</span><h2 id="walkthrough-title">Olhe para suas finanças de um jeito <em>mais simples.</em></h2>
@@ -87,6 +88,7 @@
     <p><span>↗</span> Quem precisa se preparar para parcelas, cartões e boletos.</p>
   </div></div>
 </section>
+<?php $ctaPhrase='Menos surpresa no fim do mês. Mais controle todos os dias.';require __DIR__.'/cta-repeat.php'; ?>
 <section class="section bonus" aria-labelledby="bonus-title">
   <div class="container bonus-shell"><div><span class="eyebrow">Mais que um sistema</span>
     <h2 id="bonus-title">A Central Financeira organiza suas contas. <em>Os bônus ensinam você a cuidar melhor delas.</em></h2>

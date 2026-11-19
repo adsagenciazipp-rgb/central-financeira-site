@@ -39,3 +39,25 @@ h2 em{font-weight:500;font-style:normal;color:#258f6e}
 .feature-accent .feature-card-copy p,.feature-accent .feature-label{opacity:1!important}
 .hero .hero-lead{color:#e7f5eb}
 .section-features .feature-card:not(.feature-accent) p{color:#365346}
+
+/* Conversão sem barra superior — CTA persistente a cada duas seções */
+.cta-repeat{padding:24px 0;background:#173d34}
+.cta-repeat:nth-of-type(even){background:#e5f1e7}
+.cta-repeat-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;background:#234d40;border:1px solid rgba(212,242,215,.18);border-radius:18px;padding:24px 28px}
+.cta-repeat-inner>div{display:grid;gap:6px}
+.cta-repeat-inner small{font-size:10px;font-weight:850;letter-spacing:.14em;color:#bce7c9}
+.cta-repeat-inner strong{font-family:Georgia,serif;color:#fff;font-size:clamp(20px,2.1vw,27px);font-weight:500}
+.cta-repeat-inner .btn{flex:none;text-align:center;white-space:nowrap}
+.reveal-pending{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
+.reveal-pending.is-visible{opacity:1;transform:none}
+.feature-showcase .feature-preview{overflow:hidden}
+.feature-preview .preview-screenshot{display:block;aspect-ratio:33/16;width:100%;min-height:0;background-image:url('/central-financeira/assets/portal-screens.php');background-repeat:no-repeat;background-color:#e9f1ec;background-size:200% 300%;border-radius:10px}
+.feature-preview[data-screenshot-slot="receitas-despesas"] .preview-screenshot{background-position:0 0}
+.feature-preview[data-screenshot-slot="previsao"] .preview-screenshot{background-position:100% 0}
+.feature-preview[data-screenshot-slot="cartoes-caixa"] .preview-screenshot{background-position:0 50%}
+.feature-preview[data-screenshot-slot="metas-relatorios"] .preview-screenshot{background-position:100% 50%}
+.feature-preview[data-screenshot-slot="familia"] .preview-screenshot{background-position:0 100%}
+.feature-preview[data-screenshot-slot="empresarial"] .preview-screenshot{background-position:100% 100%}
+.feature-preview .preview-window{position:relative;z-index:2}
+@media(max-width:760px){.cta-repeat{padding:14px 0}.cta-repeat-inner{flex-direction:column;align-items:stretch;padding:22px}.cta-repeat-inner .btn{white-space:normal}.feature-preview .preview-screenshot{min-height:0}}
+@media(prefers-reduced-motion:reduce){.reveal-pending{opacity:1;transform:none;transition:none}}
