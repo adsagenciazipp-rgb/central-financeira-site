@@ -20,44 +20,56 @@
   <div class="feature-grid feature-showcase">
     <article class="feature-card feature-showcase-card feature-accent">
       <div class="feature-card-copy"><span class="feature-icon" aria-hidden="true">↗</span><small class="feature-label">01 / CONTROLE</small><h3>Receitas e despesas</h3><p>Registre entradas, saídas e contas pendentes para saber para onde o dinheiro está indo.</p></div>
-      <div class="feature-preview" data-screenshot-slot="receitas-despesas" aria-label="Captura da interface do sistema: Receitas e despesas">
-        <div class="preview-window" aria-hidden="true"><span class="preview-dots"><i></i><i></i><i></i></span><span>Central Financeira</span></div>
-        <div class="preview-screenshot" role="img" aria-label="Captura real da interface do sistema financeiro"></div>
+      <div class="feature-preview has-screenshot" data-screenshot-slot="receitas-despesas">
+        <a class="preview-image-link" href="/central-financeira/assets/screens/screen-1.webp" target="_blank" rel="noopener noreferrer" title="Abrir imagem original em tamanho completo">
+          <img src="/central-financeira/assets/screens/screen-1.webp" width="1651" height="951" loading="lazy" decoding="async" alt="Tela real do sistema: Receitas e Despesas, com lançamentos, filtros e tabela financeira">
+        </a>
+        <div class="preview-caption"><span>Imagem real da Central Financeira</span><span aria-hidden="true">Ampliar ↗</span></div>
       </div>
     </article>
     <article class="feature-card feature-showcase-card">
       <div class="feature-card-copy"><span class="feature-icon" aria-hidden="true">◷</span><small class="feature-label">02 / PLANEJAMENTO</small><h3>Previsão dos próximos meses</h3><p>Antecipe vencimentos, parcelas e compromissos futuros antes de apertarem o orçamento.</p></div>
-      <div class="feature-preview" data-screenshot-slot="previsao" aria-label="Captura da interface do sistema: Previsão dos próximos meses">
-        <div class="preview-window" aria-hidden="true"><span class="preview-dots"><i></i><i></i><i></i></span><span>Central Financeira</span></div>
-        <div class="preview-screenshot" role="img" aria-label="Captura real da interface do sistema financeiro"></div>
+      <div class="feature-preview has-screenshot" data-screenshot-slot="previsao">
+        <a class="preview-image-link" href="/central-financeira/assets/screens/screen-2.webp" target="_blank" rel="noopener noreferrer" title="Abrir imagem original em tamanho completo">
+          <img src="/central-financeira/assets/screens/screen-2.webp" width="1594" height="803" loading="lazy" decoding="async" alt="Tela real do sistema: previsão financeira anual por grupos, categorias e meses">
+        </a>
+        <div class="preview-caption"><span>Imagem real da Central Financeira</span><span aria-hidden="true">Ampliar ↗</span></div>
       </div>
     </article>
     <article class="feature-card feature-showcase-card">
       <div class="feature-card-copy"><span class="feature-icon" aria-hidden="true">▤</span><small class="feature-label">03 / ORGANIZAÇÃO</small><h3>Cartões, contas e caixa</h3><p>Consulte cartões de crédito, contas bancárias e o saldo disponível em um só lugar.</p></div>
-      <div class="feature-preview" data-screenshot-slot="cartoes-caixa" aria-label="Captura da interface do sistema: Cartões, contas e caixa">
-        <div class="preview-window" aria-hidden="true"><span class="preview-dots"><i></i><i></i><i></i></span><span>Central Financeira</span></div>
-        <div class="preview-screenshot" role="img" aria-label="Captura real da interface do sistema financeiro"></div>
+      <div class="feature-preview has-screenshot" data-screenshot-slot="cartoes-caixa">
+        <a class="preview-image-link" href="/central-financeira/assets/screens/screen-3.webp" target="_blank" rel="noopener noreferrer" title="Abrir imagem original em tamanho completo">
+          <img src="/central-financeira/assets/screens/screen-3.webp" width="1619" height="923" loading="lazy" decoding="async" alt="Tela real do sistema: bancos e contas com saldos, cartões e extrato detalhado">
+        </a>
+        <div class="preview-caption"><span>Imagem real da Central Financeira</span><span aria-hidden="true">Ampliar ↗</span></div>
       </div>
     </article>
     <article class="feature-card feature-showcase-card">
       <div class="feature-card-copy"><span class="feature-icon" aria-hidden="true">◎</span><small class="feature-label">04 / VISÃO</small><h3>Metas e relatórios</h3><p>Veja seus gastos por categoria e acompanhe as metas e os resultados mês a mês.</p></div>
-      <div class="feature-preview" data-screenshot-slot="metas-relatorios" aria-label="Captura da interface do sistema: Metas e relatórios">
-        <div class="preview-window" aria-hidden="true"><span class="preview-dots"><i></i><i></i><i></i></span><span>Central Financeira</span></div>
-        <div class="preview-screenshot" role="img" aria-label="Captura real da interface do sistema financeiro"></div>
+      <div class="feature-preview has-screenshot" data-screenshot-slot="metas-relatorios">
+        <a class="preview-image-link" href="/central-financeira/assets/screens/screen-4.webp" target="_blank" rel="noopener noreferrer" title="Abrir imagem original em tamanho completo">
+          <img src="/central-financeira/assets/screens/screen-4.webp" width="1585" height="712" loading="lazy" decoding="async" alt="Tela real do sistema: gráfico de distribuição de despesas por grupo e valores">
+        </a>
+        <div class="preview-caption"><span>Imagem real da Central Financeira</span><span aria-hidden="true">Ampliar ↗</span></div>
       </div>
     </article>
     <article class="feature-card feature-showcase-card">
       <div class="feature-card-copy"><span class="feature-icon" aria-hidden="true">♙</span><small class="feature-label">05 / FAMÍLIA</small><h3>Organização familiar</h3><p>Separe os gastos da casa e acompanhe as movimentações de cada integrante.</p></div>
-      <div class="feature-preview" data-screenshot-slot="familia" aria-label="Captura da interface do sistema: Organização familiar">
-        <div class="preview-window" aria-hidden="true"><span class="preview-dots"><i></i><i></i><i></i></span><span>Central Financeira</span></div>
-        <div class="preview-screenshot" role="img" aria-label="Captura real da interface do sistema financeiro"></div>
+      <div class="feature-preview has-screenshot" data-screenshot-slot="familia">
+        <a class="preview-image-link" href="/central-financeira/assets/screens/screen-5.webp" target="_blank" rel="noopener noreferrer" title="Abrir imagem original em tamanho completo">
+          <img src="/central-financeira/assets/screens/screen-5.webp" width="1584" height="945" loading="lazy" decoding="async" alt="Tela real do sistema: evolução mensal e planilha financeira anual">
+        </a>
+        <div class="preview-caption"><span>Imagem real da Central Financeira</span><span aria-hidden="true">Ampliar ↗</span></div>
       </div>
     </article>
     <article class="feature-card feature-showcase-card">
       <div class="feature-card-copy"><span class="feature-icon" aria-hidden="true">▦</span><small class="feature-label">06 / NEGÓCIO</small><h3>Gestão empresarial</h3><p>No plano completo, controle despesas, recebimentos e a previsão financeira do seu negócio.</p></div>
-      <div class="feature-preview" data-screenshot-slot="empresarial" aria-label="Captura da interface do sistema: Gestão empresarial">
-        <div class="preview-window" aria-hidden="true"><span class="preview-dots"><i></i><i></i><i></i></span><span>Central Financeira</span></div>
-        <div class="preview-screenshot" role="img" aria-label="Captura real da interface do sistema financeiro"></div>
+      <div class="feature-preview has-screenshot" data-screenshot-slot="empresarial">
+        <a class="preview-image-link" href="/central-financeira/assets/screens/screen-6.webp" target="_blank" rel="noopener noreferrer" title="Abrir imagem original em tamanho completo">
+          <img src="/central-financeira/assets/screens/screen-6.webp" width="1946" height="955" loading="lazy" decoding="async" alt="Tela real do sistema: dashboard empresarial com receitas, despesas e saldo">
+        </a>
+        <div class="preview-caption"><span>Imagem real da Central Financeira</span><span aria-hidden="true">Ampliar ↗</span></div>
       </div>
     </article>
   </div></div>
