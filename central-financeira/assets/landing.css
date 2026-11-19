@@ -69,7 +69,7 @@ h2 em{font-weight:500;font-style:normal;color:#258f6e}
   border:1px solid #d6e5dd;background:#fff;border-radius:15px;overflow:hidden;
   min-height:0;width:100%;box-shadow:0 8px 27px rgba(26,72,56,.08)
 }
-.section-features .feature-preview .preview-image-link{display:block;width:100%;background:#fff;line-height:0;cursor:zoom-in}
+.section-features .feature-preview .preview-image-link{display:block;width:100%;background:#fff;line-height:0;cursor:default}
 .section-features .feature-preview .preview-image-link img,
 .section-features .feature-preview.has-screenshot img{
   display:block!important;width:100%!important;height:auto!important;
